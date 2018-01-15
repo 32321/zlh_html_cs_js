@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mi_login</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        img{
+            margin-left: 30px;
+        }
+        .mi{
+            background-image: url("mi.jpg");
+            background-repeat: no-repeat;
+            height: 550px;
+            width: 100%;
+            margin: 0px;
+            display: inline-block;
+        }
+        .login{
+            background-color: white;
+            width: 30%;
+            height: 500px;
+            float: right;
+            z-index: 20;
+            margin:20px 20px;
+            margin-right: 45px;
+        }
+        .count{
+            width: 100px;
+            border-right: 1px solid pink;
+            color: red;
+            padding-right: 30px;
+            margin-top: 15px;
+            margin-bottom: 0;
+            padding-top: 20px;
+
+        }
+        .ma{
+            width: 100px;
+            color: black;
+            padding-left: 30px;
+            margin-top: 15px;
+            margin-bottom: 0;
+            padding-top: 20px;
+        }
+        p{
+            text-align: center;
+            font-size: 130%;
+        }
+        .in{
+            margin: 30px 20px;
+            text-align: center;
+        }
+        input{
+            width: 300px;
+            height: 40px;
+            margin: 5px;
+            padding-left: 15px;
+        }
+        .sub{
+            background-color: #b2591b;
+            width: 319px;
+            height: 46px;
+            margin: 15px;
+            border-color: #b2591b;
+            color: white;
+            margin-bottom: 0;
+            margin-top: 20px;
+        }
+        .test1{
+            width: 150px;
+            color: red;
+            font-size: 30%;
+            float: left;
+        }
+        .test2{
+            width: 150px;
+            color: dimgray;
+            font-size: 30%;
+            float: right;
+        }
+        fieldset{
+            margin-top: 80px;
+            border-style: none;
+            border-top: ridge;
+            font-size: 30%;
+            color: #696969;
+        }
+        .other_type_links{
+            padding-top: 3px;
+            text-align: center;
+        }
+        .icon_type{
+            margin: 0 17px;
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            border-radius: 50%;
+        }
+        .btn_qq{
+            background-color: #0288d1;
+        }
+        a{
+            color: dimgrey;
+            border: 0 none;
+            text-decoration: none;
+            padding: 0;
+        }
+        .icon_type .btn_sns_icontype{
+            display: block;
+            margin: 4px auto 0;
+        }
+        .icon_default_qq{
+            background-position: -19px 0;
+        }
+        .btn_sns_icontype{
+            background: url("mi_3.png");
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+        }
+        i{
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <img src="mi_2.png" alt="小米商城">
+    </div>
+    <div class="mi">
+        <div class="login">
+            <p>
+             <span class="count">账号登录</span>
+             <span class="ma">扫码登录</span>
+            </p>
+             <div class="in">
+                 <input type="text" placeholder="邮箱/手机号码/小米ID"><br>
+                 <input type="password" placeholder="密码"><br>
+                 <input type="submit" class="sub" value="登录"><br>
+                 <span class="test1">手机短信登录/注册</span>
+                 <span class="test2">立刻注册|忘记密码?</span>
+                 <fieldset>
+                     <legend>
+                         以其他方式登录
+                     </legend>
+                 </fieldset>
+                 <div class="other_type_links">
+                     <a href="#" class="icon_type btn_qq sns-login-link">
+                         <i class="btn_sns_icontype icon_default_qq"></i>
+                     </a>
+                     <a href="#"><i></i></a>
+                     <a href="#"><i></i></a>
+                     <a href="#"><i></i></a>
+                 </div>
+             </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
