@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* golbal css*/
+.clearfix:after{
+    content: " ";
+    clear: both;
+    display: block;
+}
+/* header css start*/
+.header a{
+    display: block;
+}
+.header{
+    line-height: 0;
+    width: 1130px;
+    margin: 0 auto;
+}
+/* header css end*/
+
+/* container css start*/
+.container{
+    background: url("../images/mi.jpg") center;
+    height: 588px;
+}
+.container .login-bar{
+    width: 1130px;
+    margin: 0 auto;
+}
+.container .login-form{
+    width: 410px;
+    height: 524px;
+    background: #ffffff;
+    float: right;
+    margin-top: 32px;
+}
+.container .top-texts{
+    padding: 27px 0 24px;
+    font-size: 24px;
+    text-align: center;
+}
+.container .top-texts a{
+    text-decoration: none;
+
+    color: #666;
+}
+.container .border-line{
+    margin: 0 35px;
+    border: 1px solid #dddddd;
+}
+.container .top-texts a:first-child{
+    color:#b2591b ;
+}
+.container .top-texts a:hover{
+    color: #b2591b;
+}
+.container .login-input input{
+    font-family: Arial;
+    margin: 0 auto;
+    font-size: 16px;
+    width: 306px;
+    height: 22px;
+    padding: 13px 16px 13px 14px;
+    display: block;
+    margin-bottom: 14px;
+}
+.container .login-content{
+    width: 348px;
+    margin: 0 auto;
+}
+.container .login-btn input{
+     background-color: coral;
+    height: 50px;
+    width: 100%;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    cursor:pointer ;
+    margin-bottom: 10px;
+}
+.container .small-text{
+    font-size: 14px;
+    color: darkgray;
+}
+.container .small-text a{
+    text-decoration: none;
+}
+.container .st-left{
+    float: left;
+}
+.container .st-right{
+    float: right;
+}
+.container .st-left a{
+    color: #f0101a;
+}
+.container .st-right a{
+    color: darkgray;
+}
+.container .st-right a:hover{
+    color: #f0101a;
+}
+.container .login-type{
+    margin-top: 115px;
+}
+.container .login-type fieldset{
+    border:0;
+    border-top:1px solid #bbbbbb;
+    color: #bbb;
+    font-size: 14px;
+    padding-top: 20px;
+}
+.container .login-icon{
+    text-align: center;
+}
+.container .login-icon a{
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    background-color: #757575;
+    border-radius: 50%;
+    margin: 0 17px;
+}
+.container .login-icon i{
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url("../images/mi_3.png");
+    margin: 4px auto 0;
+}
+.container .qq i{
+    background-position: -19px 0;
+}
+.container .sina i{
+    background-position: -38px 0;
+}
+.container .alipay i{
+    background-position: -57px 0;
+    width: 25px;
+}
+.container .wechat i{
+    background-position: -84px 0;
+    width: 23px;
+}
+.container .login-icon .qq:hover{
+    background-color: #0288d1;
+}
+.container .login-icon .sina:hover{
+     background-color: #d32f2f;
+}
+.container .login-icon .alipay:hover{
+    background-color: #0ae;
+}
+.container .login-icon .wechat:hover{
+     background-color: #00d20d;
+}
+/* container css end*/
