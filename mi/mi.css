@@ -2,15 +2,24 @@
     margin: 0;
     padding: 0;
 }
+/* global css start*/
+.clearfix:after{
+    content: " ";
+    display: block;
+    clear: both;
+}
 ul{
     list-style-type: none;
     display: inline-block;
 }
 a{
     text-decoration: none;
-    color: #b0b0b0;
+    color: #666666;
     cursor: pointer;
 }
+/* global css end*/
+
+/* first-bar css start*/
 .first-bar{
     width: 100%;
     height: 40px;
@@ -38,16 +47,84 @@ a{
     text-align: center;
     padding: 0 7px;
 }
-.first-bar .li-left li{
-
-}
 .first-bar a:hover{
     color:#dddddd;
 }
 .first-bar span{
-    color: #666666;
+    color: #332f2f;
 
 }
 .first-bar .li-right{
     float: right;
+}
+.first-bar .shopbus{
+     float: right;
+     font-size: 12px;
+     width: 90px;
+     height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    display: block;
+    background: #404240
+}
+.first-bar .shopbus i{
+    font-size: 20px;
+    vertical-align: -4px;
+    margin-right: 3px;
+    color: #bb120b;
+}
+.first-bar .shopbus:hover{
+    color:#d32f2f;
+}
+/*first-bar css end*/
+/* second-header css start*/
+.second-header{
+    height: 100px;
+}
+.second-header .container-bar{
+    width: 1226px;
+    height: 100px;
+    margin: 0 auto;
+}
+.second-header .logo{
+    float: left;
+    width: 62px;
+}
+.second-header .container-bar .img-a{
+    display: inline-block;
+    background: #ff6700 url("mi.png") no-repeat 50% 50%;
+    margin: 22.5px 0;
+    width: 55px;
+    height: 55px;
+
+    float: left;
+}
+.second-header .nav{
+    width: 850px;
+    float: left;
+    display: block;
+    height: 80px;
+    margin: 12px 10px 0;
+}
+.second-header .container-nav li{
+    display: inline;
+    float: left;
+    margin:0 10px;
+
+}
+.second-header .container-nav a{
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+}
+.second-header .first_wap{
+     display: block;
+     visibility: hidden;
+     padding: 0 15px;
+}
+.second-header .container-nav a:hover{
+    color: #d3160a;
 }
