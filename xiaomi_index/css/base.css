@@ -362,7 +362,7 @@ a{
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    border: 2px,solid #ffffff;
+    border: 2px solid #ffffff;
     border-color:rgba(255,255,255,0.3) ;
     background-color: rgba(0,0,0,0.4);
 }
@@ -486,7 +486,7 @@ a{
     display: inline-block;
     width: 230px;
     float: left;
-    margin:0,5px;
+    margin:0 5px;
     float: left;
     text-align: center;
     margin-top: 40px;
@@ -564,14 +564,91 @@ a{
 /*mi-equip css start*/
 .mi_equip{
     width: 100%;
-    height: 700px;
     background-color: #f5f5f5;
 }
 .mi_equip .content{
     width: 1226px;
     margin: 0 auto;
+    position: relative;
+    padding-top: 60px;
 }
 .mi_equip .content .equip-top{
     height: 58px;
+    text-align: center;
+}
+.mi_equip .equip-top h2{
+    line-height: 58px;
+    float: left;
+    font-size: 22px;
+    color: #333;
+    font-weight: 200;
+}
+.mi_equip .equip-top ul{
+    position: absolute;
+    right: 0;
+    text-align: center;
+    padding: 16px 0  0;
+}
+.mi_equip .equip-top li{
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 30px;
+}
+.mi_equip .equip-top .first-select{
+    color: #ff6700;
+    border-bottom: 2px solid #ff6700;
+    padding-bottom: 2px;
+}
+.mi_equip .equip-bottom .left{
+    float: left;
+}
+.mi_equip .left img{
+    width: 234px;
+    height: 614px;
+}
+.mi_equip .right li{
+    background: #fff;
+    float: left;
+    margin-left: 14px;
+    margin-bottom: 5px;
+    text-align: center;
+    padding:0 42px;
+    padding-top: 10px;
+}
+.mi_equip .right img{
+    width: 150px;
+    height: 150px;
+}
+.mi_equip h3{
+    padding-top: 20px;
+}
+.mi_equip h3 a{
+    color: #333333;
+    font-size: 14px;
+    font-weight: 400;
+}
+.mi_equip .right p{
+    padding-bottom: 15px;
+}
+.mi_equip .right .first{
+    font-size: 12px;
+    text-align: center;
+    color: #b0b0b0;
+}
+.mi_equip .right p:last-child{
+    padding-bottom: 34px;
+    color: #ff6700;
+}
+.mi_equip .right p:last-child span{
+    color: #b0b0b0;
+    text-decoration:line-through;
+}
+.mi_equip .right .r-top{
+    margin-top: 14px;
+}
+
+.mi_equip .rb img{
+    width: 80px;
+    height: 80px;
 }
 /*mi-equip css end*/
