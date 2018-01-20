@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var ft=window.confirm("亲,您要来就餐吗?");
+    if(ft){
+    var a=window.prompt("一共几个人在这里吃了饭?");
+    if(a==3){
+    alert("我店免费为顾客提供饮料!");
+    var b=new Array();
+    for(var i=0;i<a;i++){
+         var c=i+1;
+         b[i]=window.prompt("第"+c+"个人的名字是:")
+    }
+    for(var j=0;j<a;j++){
+    var d,h=0;
+    switch(j) {
+        case 0:d="米线";
+               alert(b[j]+"点的餐是"+d);
+               h+=20;
+               break;
+        case 1:d="麻辣牛肉面";
+               alert(b[j]+"点的餐是"+d);
+               h+=18;
+               break;
+        case 2:d="麻辣烫";
+               alert(b[j]+"点的餐是"+d);
+               h+=22;
+               break;
+        default:d="没点任何东西";
+     }
+    }
+    alert("一共消费了"+h+"元");
+    }else{
+        alert("不好意思，我店只为三人同行的顾户提供餐饮");
+    }
+    }else{
+        alert("再见!");
+    }
+</script>
+</body>
+</html>

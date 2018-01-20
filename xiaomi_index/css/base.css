@@ -647,14 +647,43 @@ a{
     margin-top: 14px;
 }
 .mi_equip .right .r-top:last-child{
-    width: 150px;
     text-align: center;
 }
-.mi_equip .right .r-top li{
-    float: none;
+.mi_equip .content .top{
+    font-size: 14px;
+    position: relative;
+    padding: 30px 82px;
+    text-align: left;
+    width: 70px;
+    height: 90px;
 }
-.mi_equip .rb img{
+.mi_equip .top .right-img{
+    position: absolute;
+    right: 20px;
+    top: 32px;
+    width: 80px;
+    height: 83px;
+}
+.mi_equip .top .title{
+    position: absolute;
+    left: 30px;
+    top: 52px;
+}
+.mi_equip .top p{
+    position: absolute;
+    left: 30px;
+    top: 77px;
+}
+.mi_equip .top img{
     width: 80px;
     height: 80px;
+}
+.mi_equip .bottom{
+    width: 234px;
+    height: 143px;
+    margin-top: 14px;
+}
+.mi_equip .bottom a{
+
 }
 /*mi-equip css end*/
