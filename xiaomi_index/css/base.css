@@ -353,8 +353,8 @@ a{
 }
 .slider-bar .si-bottom{
     position: absolute;
-    bottom: 100px;
-    right: 100px;
+    bottom: 30px;
+    right: 30px;
 }
 .slider-bar .si-bottom li{
     float: left;
@@ -370,6 +370,9 @@ a{
     border: 2px solid #ffffff;
     border-color:rgba(255,255,255,0.3) ;
     background-color: rgba(0,0,0,0.4);
+}
+.slider-bar .si-bottom a:hover{
+    background-color: #b0b0b0;
 }
 .slider-bar .slider-content img{
     width: 1226px;
