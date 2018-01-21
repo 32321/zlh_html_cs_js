@@ -6,21 +6,28 @@
 </head>
 <body>
 <script>
-    for(var i=0;i<10;i++){
-        for(var j=0;j<=i;j++){
-            document.writeln("* ");
-        }
-        document.write("<br>");
-    }
-    for(var x=0;x<10;x++){
-        for(var y=0;y<9-x;y++){
-            document.write("&nbsp;");
-        }
-        for(var z=0;z<=x;z++){
-            document.write("* ");
-        }
-        document.write("<br>");
-    }
+//    for(var i=0;i<10;i++){
+//        for(var j=0;j<=i;j++){
+//            document.writeln("* ");
+//        }
+//        document.write("<br>");
+//    }
+//    for(var x=0;x<10;x++){
+//        for(var y=0;y<9-x;y++){
+//            document.write("&nbsp;");
+//        }
+//        for(var z=0;z<=x;z++){
+//            document.write("* ");
+//        }
+//        document.write("<br>");
+//    }
+    var x=["1","3","2"];
+    document.write(x.length);
+    document.write(x.toString());
+    x=x.join("-");
+    console.log(x);
+    document.write(typeof x);
+    document.write(x.toString());
 </script>
 </body>
 </html>
