@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //冒泡排序
+    //每轮都在相邻的两个数之间进行比较
+    //计算一下，一共可以比较9轮，每轮比较可以在一定的范围内找到一个最大数
+    //1  前10个数     2 前9个数   3  前8个数 ...
+    //     （0，9）       （0，8）    （0，7） ...
+    var arr=[8,5,3,43,0,6,1];
+    document.write(arr.toString()+"<br>");
+    var mkchg=0;
+    function fun(arr) {
+        for(var i=1;i<arr.length;i++){
+            for(var j=0;j<arr.length-i;j++){
+                 if(arr[j]>arr[j+1]){
+                     mkchg=arr[j+1];
+                     arr[j+1]=arr[j];
+                     arr[j]=mkchg;
+                 }
+            }
+        }
+    }
+    fun(arr);
+    document.write(arr.toString());
+</script>
+</body>
+</html>

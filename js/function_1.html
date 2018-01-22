@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a=9;
+    var b=6;
+//    function fun1(a,b,c){
+//        console.log("a="+a+" b="+b+" c="+c);
+//    }
+//    fun1(a,b);
+//    function fun2(a,b){
+//        return a+b;
+//    }
+//    var c=fun2(a);
+//    console.log(typeof c);//NaN
+//    console.log(c);
+//    var m=function () {
+//         console.log(a+b);
+//     }
+//      m();//匿名函数
+//    (function () {
+//            console.log(a+b);
+//        })();//快速执行函数
+    /* 变量有局部和全局之分。变量只有在函数体中才能是局部变量。定义在函数体中的变量在函数执行完立即销毁。 */
+//    console.log(a);//undefined  之前未曾定义过a,但浏览器仍然会找到a,但此时未曾赋值，故为undefined
+//                    // 这是因为在执行过程中首先浏览器会解析全部代码，然后会找到变量的声明，此时会为它创建一片内存区域
+//    var a=10;      //但直到执行时为其赋值时才会有值。在此之前为undefined。这就是所谓的变量提升机制。
+//      fun3();//正常执行  输出zhulihao    //和变量提升机制类似，函数和变量的内存区域不在一块。变量存放在栈中，函数存放在堆中。
+//      function fun3() {
+//            console.log("zhulihao");
+//      }
+//       console.log(b);//undefined;//变量提升机制
+////       b();//匿名函数不能进行提升 出错,执行停止///
+//       var b=function () {
+//            console.log("zhuzhuzhu");
+//       }
+//       console.log(b);//ƒ () {console.log("zhuzhuzhu");}   为表达式。想一下快速执行函数的实现。
+//    var a=9;
+//    function fun4() {
+//        console.log(a);//undefined   此时使用的变量是在函数体中的。是因为下面定义了a
+////        var a=8;
+//        console.log(a);//8
+//    }
+//    fun4();
+</script>
+</body>
+</html>
