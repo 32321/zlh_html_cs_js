@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var a=1;
+//    function fun() {
+//        console.log(a);
+//    }
+//    fun();//1
+
+//      var a=1;
+//      function fun() {
+//          var b=2;
+//          console.log("a="+a+",b="+b);
+//      }
+//      fun();//a=1,b=2
+//      console.log("a="+a+",b="+b);//b is not defined
+
+//        var a=1;
+//        function fun() {
+//            var a=2;
+//            console.log(a);
+//        }
+//        fun();//2
+//        console.log(a);//1
+
+//          var a=5;
+//          var b=6;
+//          var c=7;
+//          function fun() {
+//              var a=10;
+//              b=20;
+//              console.log("a="+a+" b="+b+" c="+c);
+//          }
+//          fun();//a=10 b=20 c=7
+//          console.log("a="+a+" b="+b+" c="+c);//a=5 b=20 c=7
+
+//            function fun() {
+//                 i=5;
+//                 console.log(i);
+//            }
+//            fun();//5
+//            console.log(window.i);//5
+
+//             var x=1;
+//             console.log(x);//1
+//             if(true){                 //只有在函数体中定义的变量才是局部变量
+//                 var b=2;               //在其他位置定义的都是全局变量
+//                 console.log(b);//2
+//             }
+//             console.log(b);//2
+
+//                var x=1;
+//                console.log(x);//1
+//                function fun() {
+//                    var b=2;
+//                    console.log(x);
+//                }
+//                fun();//1
+//                console.log(b);// b is not defined
+
+                  var a=1;
+                  var b=a;
+                  a=3;
+                  console.log(b);//1
+                  var person={
+                      name:"xiaohong",
+                      age:"19"
+                  }
+                  person.name="xiaoming";
+                  console.log(person.name);//xiaoming
+  </script>
+</body>
+</html>

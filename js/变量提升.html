@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var v="Hello World";    //正常使用
+//    function fun() {
+//        console.log(v);
+//    }
+//    fun();//Hello World
+
+//       var v="Hello World";      //这是运用到了变量提升机制
+//       function fun() {
+//           console.log(v);
+//           var v=9;
+//       }
+//       fun();//undefined
+
+//        //函数提升                    //正常使用
+//        function fun(name) {
+//            console.log("name is"+name);
+//        }
+//        fun("cat");//name iscat
+
+//          fun("cat");  // name iscat
+//          function fun(name) {      //运用到了函数提升机制
+//              console.log("name is"+name);
+//          }
+
+            console.log("1="+a);//1=function a() {
+                                   //     console.log("2="+a);
+                                 //   }       //会把a所代表的函数输出
+                                              //即使后面定义了变量，此时也不输出。
+            var a=1;
+            function a() {
+                console.log("2="+a);
+            }
+            a=2;
+            a();//a is not a function
+            console.log(a);
+</script>
+</body>
+</html>

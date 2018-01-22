@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var wide=window.prompt("请输入三角形的底边长度");
+    var high=window.prompt("请输入三角形的高!");
+    var area=wide*high/2;
+    if(!isNaN(area)){//判断用户输入的是数字
+        alert("三角形的面积:"+area);
+    }else {
+        alert("您的输入有误!");
+    }
+</script>
+</body>
+</html>

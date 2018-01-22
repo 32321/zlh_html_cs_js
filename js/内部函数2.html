@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var a=1;
+//    function fun() {
+//        console.log(a);//1
+//        function b() {
+//            var aaa=2;
+//            console.log(a);//1
+//        }
+//        b();
+//        console.log(aaa);//aaa is not defined
+//    }
+//    fun();
+
+      var a=0;
+      function fun() {
+          console.log(a);//undefined  变量提升机制
+          var a=2;
+          console.log(a);//2
+      }
+      fun();
+</script>
+</body>
+</html>
