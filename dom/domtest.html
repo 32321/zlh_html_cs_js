@@ -23,7 +23,7 @@
 <script>
         var a=document.getElementsByTagName("li");    //鼠标移动离开时li会改变颜色
         var i=0;
-        a.onmouseover=function () {
+        a.onmouseover=function () {                     //多种实现
             i=a.childIndex();
         }
         a[0].onmouseout=function () {
