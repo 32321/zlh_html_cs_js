@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var i=window.prompt("请输入一个数值");         //求某个数的平方  平方根   自然对数
+//    if(!isNaN(i)){
+//        document.write(i*i+" 平方"+"<br>");
+//        document.write(Math.log(i)+" 自然对数"+"<br>");
+//        document.write(Math.sqrt(i)+" 平方根"+"<br>");
+//    }else {
+//        alert("请重新输入!");
+//    }
+
+//    function fun1() {               //随机生成一个0到100之间的正数
+//        var i=Math.floor(Math.random()*100);
+//        document.write(i);
+//    }
+//    fun1();
+
+//        (function () {         //利用快速执行函数汇报当前时间
+//          var date=new Date();
+//          document.write(date+"<br>");
+//          var year=date.getFullYear();
+//          var month=date.getMonth();
+//          var day=date.getDate();
+//          var hour=date.getHours();
+//          var min=date.getMinutes();
+//          var sec=date.getSeconds();
+//          document.write("现在是"+year+"年"+month+"月"+day+"日"+hour+"时"+min+"分"+sec+"秒");
+//      })();
+
+//        var str=window.prompt("请输入一个字符串");    //找出字符串中的数字拼接成一个单独的字符串
+//        var str1="";
+//        function collectDigit(str) {
+//             for(var i=0;i<str.length;i++){
+//                   if(!isNaN(parseInt(str.charAt(i)))){
+//                         str1+=str.charAt(i);
+//                   }
+//             }
+//             alert(str1);
+//        }
+//        collectDigit(str);
+
+//          function merge() {                                      //两个字符串混合
+//              var str1=window.prompt("请输入第一个字符串");
+//              var str2=window.prompt("请输入第二个字符串");
+//              document.write(str1+" "+str2+" ");
+//              var str3="";
+//              if(str1.length>=str2.length){
+//                  for(var i=0;i<str2.length;i++){
+//                      str3+=str1.charAt(i)+str2.charAt(i);
+//                  }
+//                  str3+=str1.substring(str2.length);
+//              }else {
+//                  for(var j=0;j<str1.length;j++){
+//                      str3+=str1.charAt(j)+str2.charAt(j);
+//                  }
+//                  str3+=str2.substring(str1.length);
+//              }
+//              document.write(str3);
+//          }
+//          merge();
+
+
+            var x=1;
+            var y=1;
+            var z=0;
+            var i=0;
+            var arr=new Array(x,y);
+            function fun(x,y) {         //利用递归求出斐波纳契（Fibonacci）数列，并把数列存储在数组中
+               if(i<=37){
+                   z=x+y;
+                   x=y;
+                   y=z;
+                   arr[i+2]=z;
+                   i++;
+                   fun(x,y);
+               }
+
+            }
+            fun(x,y);
+            for(var j=0,i=0;j<arr.length;j++,i++){             //输出数组中的数    每行输出一个6个数
+                if(i<6){
+                    document.write(arr[j]+"&nbsp;&nbsp;&nbsp;");
+                }else {
+                    document.write("<br>");
+                    document.write(arr[j]+"&nbsp;&nbsp;&nbsp;");
+                    i=0;
+                }
+            }
+</script>
+</body>
+</html>
