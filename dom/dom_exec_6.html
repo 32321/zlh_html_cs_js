@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa{
+            border: 1px solid #696969;
+            margin: 0 auto;
+            text-align: center;
+            height: 600px;
+        }
+        .bb{
+            border-bottom:1px solid #696969;
+        }
+        .bb img{
+            width: 600px;
+            height: 400px;
+        }
+        .cc img{
+            width: 150px;
+            height: 150px;
+            line-height: 150px;
+        }
+        .cc div{
+            float: left;
+            margin-left: 150px;
+            border-right:1px solid #696969;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="aa">
+    <div class="bb"><img class="ee" src="../xiaomi_index/images/eye.jpg" alt=""></div>
+    <div class="cc">
+        <div><img class="dd" src="../xiaomi_index/images/eye.jpg" alt=""></div>
+        <div><img class="dd" src="../xiaomi_index/images/mi_water.jpg" alt=""></div>
+        <div><img class="dd" src="../xiaomi_index/images/mi_phone_image.jpg" alt=""></div>
+        <div><img class="dd" src="../xiaomi_index/images/mi_macicneman.jpg" alt=""></div>
+    </div>
+</div>
+<script>
+    var aaa=document.getElementsByClassName("ee")[0];
+    var ddd=document.getElementsByClassName("dd");
+    for(var i=0;i<ddd.length;i++){
+        ddd[i].onmouseover=function () {
+             var bbbb=this.getAttribute("src");
+             aaa.setAttribute("src",bbbb);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book</title>
+    <style>
+
+    </style>
+</head>
+<body>
+   <div id="a">
+       <div id="b">
+
+               <img src="../xiaomi_index/images/mi_center_3.jpg" alt="">
+       </div>
+       <div style="background-color: red;" id="c">
+           <p id="d">
+               小米涉及很多领域，包括手机，电脑，智能硬件，风头很足。
+               <button onclick="fun()">小米</button>
+           </p>
+       </div>
+   </div>
+   <script>
+       var i=0;
+       function fun() {
+           var arr=["../xiaomi_index/images/mi_center_3.jpg","../xiaomi_index/images/eye.jpg","../xiaomi_index/images/mi_water.jpg","../xiaomi_index/images/eye.jpg","../xiaomi_index/images/eye.jpg0"];
+           var a=document.getElementsByTagName("img")[0];
+           i++;
+           a.setAttribute("src",arr[i]);
+       }
+//       var ft=window.closed;
+//       console.log(ft);
+//       var secdiv=document.getElementById("c");
+//       var cp=document.createElement("p");
+//       var ctn=document.createTextNode("买个手机吧");
+//       cp.appendChild(ctn);
+//       secdiv.appendChild(cp);
+//       var ss=secdiv.attributes;
+//       console.log(ss[0]);//2
+
+//       var secdiv=document.getElementById("c");
+//       var cn=secdiv.childNodes;
+//       console.log(cn.length);
+//       for(var i=0;i<cn.length;i++){
+//           console.log(cn[i].nodeName+" "+cn[i].className+"\n");
+//       }
+
+         var div=document.getElementById("c");
+         document.write(div.clientHeight+" "+div.clientWidth);
+         console.log(div.firstChild);
+         console.log(div.getAttribute("id"));
+         console.log(div.getAttributeNode("id"));
+         console.log(div.getElementsByTagName("p"));
+   </script>
+</body>
+</html>

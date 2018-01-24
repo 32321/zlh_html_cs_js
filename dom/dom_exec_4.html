@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p><input type="text"></p>
+
+<input id="oo" type="button" value="跳转">
+<script>
+    var aInput=document.getElementsByTagName("input");
+    var oobtn=document.getElementById("oo");
+    oobtn.onclick=function () {
+        var thisval=aInput[0].value;
+        thisval="http://"+thisval;
+        location.href=thisval;
+    }
+    aInput[0].onkeydown=function (e) {
+        var thisval=aInput[0].value;
+        var xx=e.keyCode;
+        console.log(xx);
+        if(xx==13){
+        location.href="http://"+thisval;
+        }
+    }
+</script>
+</body>
+</html>

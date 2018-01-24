@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+        .zlh{
+            width: 300px;
+            margin: 0 auto;
+        }
+        .aa{
+            background-color: #256616;
+            text-align: center;
+            overflow: hidden;
+        }
+        .aa li{
+            float: left;
+            width: 50px;
+            /*margin-right: 50px;*/
+        }
+        .cc{
+            display: none;
+        }
+        .bb{
+            display: block;
+        }
+        .zlh{
+            background-color: dimgrey;
+        }
+    </style>
+</head>
+<body>
+     <div class="zlh">
+         <div class="abc">
+             <ul class="aa">
+                 <li class="x">第一课</li>
+                 <li class="x">第二课</li>
+                 <li class="x">第三课</li>
+             </ul>
+         </div>
+         <div>
+             <ul class="bb cc">
+                 <li>飞机会让人aaaa</li>
+                 <li>率空格和你还跟他果他</li>
+                 <li>欸分解分解木工</li>
+                 <li>v覅回过头徒糊涂</li>
+             </ul>
+             <ul class="cc">
+                 <li>uehe富有人dddddd</li>
+                 <li>拉尔夫果他</li>
+                 <li>覅进入沟通好工</li>
+                 <li>v个防护人涂</li>
+             </ul>
+             <ul class="cc">
+                 <li>飞机会让人frgrggtg</li>
+                 <li>率滚如果他</li>
+                 <li>发v规土木工</li>
+                 <li>v个叛徒糊涂</li>
+             </ul>
+         </div>
+     </div>
+     <script>
+//          var z=document.getElementsByClassName("x");                     //一：onmouseover
+//          var l=document.getElementsByClassName("cc");
+//          var h=document.getElementsByClassName("abc")[0];
+//          h.onmouseout=function () {
+//              l[0].style.display="block";
+//          }
+//          for(var i=0;i<z.length;i++){
+//
+//               z[i].index=i;
+//               z[i].onmouseover=function () {
+//                   l[this.index].style.display="block";
+//                   if(this.index!=0){
+//                           l[0].style.display="none";
+//                   }
+//               }
+//               z[i].onmouseout=function () {
+//                   l[this.index].style.display="none";
+//               }
+//          }
+
+          var z=document.getElementsByClassName("x");                       //二：onclick
+          var l=document.getElementsByClassName("cc");
+          var h=document.getElementsByClassName("abc")[0];
+          for(var i=0;i<z.length;i++){
+              z[i].index=i;
+              z[i].onclick=function () {
+                  for(var j=0;j<z.length;j++){
+                     l[j].style.display="none";
+                  }
+                  l[this.index].style.display="block";
+              }
+          }
+     </script>
+</body>
+</html>

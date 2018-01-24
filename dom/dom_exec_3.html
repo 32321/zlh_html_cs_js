@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            margin: 0 auto;
+        }
+        p{
+            margin:auto;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .a{
+            color: red;
+        }
+        .aa{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p class="aa">文本一</p>
+    <p>文本二</p>
+    <p>文本三</p>
+    <p>文本四</p>
+</div>
+<script>
+    var ap=document.getElementsByTagName("p");
+
+      for(var i=0;i<ap.length;i++){
+        ap[i].onclick=function () {
+            for(var i=0;i<ap.length;i++){
+                ap[i].classList.remove("a");
+            }
+            this.classList.add("a");
+        }
+      }
+</script>
+</body>
+</html>
