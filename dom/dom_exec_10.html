@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: #212121;
+        }
+        .clearfix:after{
+            content: " ";
+            clear: both;
+            display: block;
+        }
+        .use{
+            width: 520px;
+            margin: 0 auto;
+            text-align: center;
+            /*height: 300px;*/
+            position: relative;
+            border: 5px solid beige;
+        }
+        img{
+            width: 520px;
+            height: 300px;
+        }
+        .iconf{
+            position: absolute;
+            top: 270px;
+        }
+        .left{
+            float: left;
+            position: relative;
+            left: 20px;
+            font-size: 15px;
+        }
+        span{
+            border: 1px solid #b2591b;
+            border-radius: 50%;
+            background-color: #b2591b;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+        a{
+            text-decoration: none;
+            border: 1px solid #b2591b;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: #b2591b;
+            display: inline-block;
+        }
+        .right{
+            float: right;
+            position: relative;
+            left: 330px;
+        }
+        /*a:hover{*/
+            /*background-color: #d3160a;*/
+        /*}*/
+    </style>
+</head>
+<body>
+  <div class="use clearfix">
+      <img src="../xiaomi_index/images/mi_center_1.jpg" alt="">
+      <div class="iconf clearfix">
+         <div class="left">
+             <span>&lt;</span>
+             <span>&gt;</span>
+         </div>
+         <div class="right">
+             <a href="#">1</a>
+             <a href="#">2</a>
+             <a href="#">3</a>
+             <a href="#">4</a>
+             <a href="#">5</a>
+         </div>
+      </div>
+  </div>
+  <script>
+      var im=document.getElementsByTagName("img")[0];
+      var sp=document.getElementsByTagName("span");
+      var aon=document.getElementsByTagName("a");
+      var srcs=["../xiaomi_index/images/mi_center_1.jpg","../xiaomi_index/images/mi_center_2.jpg","../xiaomi_index/images/mi_center_3.jpg","../xiaomi_index/images/mi_water.jpg","../xiaomi_index/images/mi_macicneman.jpg"];
+      var j=0;
+      for(var i=0;i<sp.length;i++){
+           sp[i].onclick=function () {
+                 if(i==1){
+                     j++;
+                     if(j>srcs.length-1){
+                         j=0;
+                     }
+                   im.setAttribute("src",srcs[j]);
+                 }else {
+                     j--;
+                     if(j<0){
+                         j=srcs.length-1;
+                     }
+                     im.setAttribute("src",srcs[j]);
+                 }
+           }
+      }
+      for(var m=0;m<aon.length;m++){         //点击a标签时，会进行刷新，会非常苦逼的发现页面刷新，回到最初的样式，照片不会改变，
+          aon[m].index=m;                   //尽量避免使用a标签来进行转换
+          aon[m].onmouseover=function () {
+              console.log(this.index);
+              var ssr=srcs[this.index];
+              console.log(ssr);
+              for(var n=0;n<aon.length;n++){
+                  aon[n].style.backgroundColor="";
+              }
+              aon[this.index].style.backgroundColor="#d3160a";
+              im.setAttribute("src",ssr);
+          }
+      }
+//      var z=0;
+//      setInterval(function () {
+//          if(z==srcs.length){
+//              z=0;
+//          }
+//          im.setAttribute("src",srcs[z]);
+//          for(var zz=0;zz<aon.length;zz++){
+//              aon[zz].style.backgroundColor="";
+//          }
+//          aon[z].style.backgroundColor="#d3160a";
+//          z++;
+//      },1000);
+  </script>
+</body>
+</html>

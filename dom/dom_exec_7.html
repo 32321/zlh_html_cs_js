@@ -8,7 +8,7 @@
             list-style-type: none;
         }
         .zlh{
-            width: 300px;
+            width: 500px;
             margin: 0 auto;
         }
         .aa{
@@ -19,7 +19,7 @@
         .aa li{
             float: left;
             width: 50px;
-            /*margin-right: 50px;*/
+            margin-right: 50px;
         }
         .cc{
             display: none;
@@ -28,7 +28,10 @@
             display: block;
         }
         .zlh{
-            background-color: dimgrey;
+            background-color: #d2facc;
+        }
+        .y{
+            background-color: #b2591b;
         }
     </style>
 </head>
@@ -91,8 +94,10 @@
               z[i].onclick=function () {
                   for(var j=0;j<z.length;j++){
                      l[j].style.display="none";
+                     z[j].classList.remove("y");
                   }
                   l[this.index].style.display="block";
+                  z[this.index].classList.add("y");
               }
           }
      </script>

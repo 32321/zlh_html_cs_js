@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #666666;
+            margin: 0 auto;
+        }
+        p{
+            line-height: 200px;
+            font-size: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div><p>我</p></div>
+    <script>
+        var pinner=document.getElementsByTagName("p")[0];
+        var v=["我","是","你","爸","呀"];
+        var c=["#666","#d2facc","#b2591b","#256616","#35ff08"];
+        var i=0;
+        i=0;
+        setInterval(function () {
+            if(i==v.length){
+                i=0;
+            }
+            pinner.innerHTML=v[i];
+            pinner.style.backgroundColor=c[i];
+            i++;
+        },500);
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: #666666;
+            text-align: center;
+        }
+        p{
+            line-height: 200px;
+            font-size: 50px;
+        }
+        button{
+            line-height: 100px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>100</p>
+    <button>开始</button>
+</div>
+<script>
+    var pp=document.getElementsByTagName("p")[0];
+
+    var btn=document.getElementsByTagName("button")[0];
+    var i=0;
+    var zl;
+      btn.onclick=function () {
+        i++;
+        if(i%2!==0){
+             zl=setInterval(function () {       //这个变量是一直变化的
+             var v=pp.innerHTML;
+             v=v-1;
+             pp.innerHTML=v;
+        },1000);
+        btn.innerHTML="停止";
+        }else{
+            clearInterval(zl);
+            btn.innerHTML="开始";
+         }
+    }
+</script>
+</body>
+</html>
