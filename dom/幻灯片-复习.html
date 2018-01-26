@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style-type: none;
+        }
+        body{
+            background-color: #333333;
+        }
+        .box{
+            width: 631px;
+            height: 334px;
+            padding: 10px;
+            margin: 30px auto;
+            border-radius: 10px;
+            background-color: #ffffff;
+            overflow: hidden;/******/
+            position: relative;
+        }
+        .radiu-btn{
+            position: absolute;
+        }
+        .radiu-btn li{
+            height: 20px;
+            width: 20px;
+            background:#F90;
+            opacity: 0.7;
+            filter:alpha(opacity=70);
+            float: left;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #ffffff;
+            margin-right: 10px ;
+        }
+        .left-bt{
+            left: 10px;
+            bottom: 10px;
+        }
+        .right-bt{
+            right: 10px;
+            bottom: 10px;
+        }
+        .right-bt .active{
+            background-color: #fa3716;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <ul>
+                <li><img src="../xiaomi_index/images/mi_center_1.jpg" alt=""></li>
+                <li><img src="../xiaomi_index/images/mi_center_2.jpg" alt=""></li>
+                <li><img src="../xiaomi_index/images/mi_center_3.jpg" alt=""></li>
+                <li><img src="../xiaomi_index/images/mi_center_2.jpg" alt=""></li>
+                <li><img src="../xiaomi_index/images/mi_center_3.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="radiu-btn left-bt">
+            <ul>
+                <li this-type="aa">&lt;</li>
+                <li this-type="bb">&gt;</li>
+            </ul>
+        </div>
+        <div class="radiu-btn right-bt">
+            <ul>
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var aUl=document.getElementsByTagName("ul");
+        var aImg=aUl[0].getElementsByTagName("li");
+        var aLbt=aUl[1].getElementsByTagName("li");
+        var aRbt=aUl[2].getElementsByTagName("li");
+        var globalIndex=0;
+
+        function changeImg(index) {
+            if(index==5){
+                index=0;
+                globalIndex=0;
+            }
+            if(index==-1){
+                index=4;
+                globalIndex=4;
+            }
+            for(var j=0;j<aRbt.length;j++){
+                aRbt[j].className="";
+                aImg[j].style.display="none";
+            }
+            aRbt[index].className="active";
+            aImg[index].style.display="block";
+        }
+
+        for(var i=0;i<aRbt.length;i++){
+             aRbt[i].index=i;
+             aRbt[i].onmouseover=function () {
+                    globalIndex=this.index;
+                    changeImg(globalIndex);
+             }
+        }
+
+        for(var j=0;j<aLbt.length;j++){
+            aLbt[j].onclick=function () {
+                var cc=this.getAttribute("this-type");
+                if(cc=="bb"){
+                    changeImg(++globalIndex);
+                }else {
+                    changeImg(--globalIndex);
+                }
+
+            }
+        }
+    </script>
+</body>
+</html>

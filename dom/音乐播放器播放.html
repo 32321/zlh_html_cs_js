@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐播放</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .content{
+            width: 1000px;
+            height: 70px;
+            margin:0 auto;
+            background-color: #9273f5;
+            position: relative;
+        }
+        .left{
+            line-height: 70px;
+            float: left;
+            position: absolute;
+            left: 10px;
+        }
+        button{
+            outline:none;
+        }
+        .left button{
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            font-size: 10px;
+            border: 1px solid #d3160a;
+            border-radius: 50%;
+        }
+        .center{
+            line-height: 70px;
+            position: absolute;
+            left: 200px;
+        }
+        .center span{
+            vertical-align: middle;
+            font-size: 10px;
+            color: #333333;
+            border-radius: 5px;
+        }
+        .center .go{
+            display: inline-block;
+            width: 400px;
+            height: 4px;
+            background-color: #dd7b26;
+        }
+        a{
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background-color:#d3160a;
+            vertical-align: middle;
+            border: 4px solid aliceblue;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="left">
+            <button>上一首</button>
+            <button>播放</button>
+            <button>下一首</button>
+        </div>
+        <div class="center">
+            <span>00:00</span>
+            <span style="display: inline-block"></span><a href="#"></a><span class="go"></span>
+
+            <span>04:05</span>
+        </div>
+    </div>
+    <script>
+        function fun() {
+            if(aSp[1].offsetWidth==0){
+                ccc=aSp[1].offsetWidth;
+            }
+            ccc=len/t+ccc;
+            aSp[1].style.width=ccc+"px";
+            aSp[1].style.backgroundColor="#d3160a";
+            if(aSp[2].offsetWidth==len){
+                ddd=aSp[2].offsetWidth;
+            }
+            ddd-=len/t
+            aSp[2].style.width=ddd+"px";
+
+            b+=1;
+            if(b==60){
+                a+=1;
+                b=0;
+            }
+            if(b<=9){
+                if(a<=9){
+                    aSp[0].innerHTML="0"+a+":"+"0"+b;
+                }else {
+                    aSp[0].innerHTML=a+":"+"0"+b;
+                }
+            }else {
+                if(a<=9){
+                    aSp[0].innerHTML="0"+a+":"+b;
+                }else {
+                    aSp[0].innerHTML=a+":"+b;
+                }
+            }
+
+            if(d==0){
+                c-=1;
+                d=60;
+            }
+            d-=1;
+            if(d<=9){
+                aSp[3].innerHTML="-0"+c+":"+"0"+d;
+            }else {
+                aSp[3].innerHTML="-0"+c+":"+d;
+            }
+            if(c==0&&d==0){
+                aSp[0].innerHTML="00:00";
+                aSp[3].innerHTML=cccc;
+                aSp[1].style.width="0";
+                aSp[2].style.width=len+"px";
+                a=0;
+                b=0;
+                c=c1;
+                d=d1;
+                clearInterval(setIn);
+                obtn.innerHTML="播放";
+                i=i*(-1);
+            }
+        }
+
+        var obtn=document.getElementsByTagName("button")[1];
+        var aSp=document.getElementsByTagName("span");
+        var cccc=aSp[3].innerHTML;
+        var sp1=aSp[0].innerHTML.split(":");
+        var a=parseInt(sp1[0]);
+        var b=parseInt(sp1[1]);
+        var sp2=aSp[3].innerHTML.split(":");
+        var c=parseInt(sp2[0]);
+        var c1=c;
+        var d=parseInt(sp2[1]);
+        var d1=d;
+        var i=1;
+        var setIn=0;
+
+        var len=aSp[2].offsetWidth;
+        var ddd=len;
+        var t=d+c*60;
+        aSp[1].style.width=0+"px";
+        var ccc=parseInt(aSp[1].style.width.split("p")[0]);
+        aSp[1].style.height="4px";
+        obtn.onclick=function () {
+            if(i==1){
+                obtn.innerHTML="停止";
+                    setIn=setInterval("fun()",1000);
+            }else {
+                clearInterval(setIn);
+                obtn.innerHTML="播放";
+            }
+            i=i*(-1);
+        }
+    </script>
+</body>
+</html>

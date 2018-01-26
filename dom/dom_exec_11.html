@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aaa{
+            background-color: #b2591b;
+            width: 200px;
+            height: 40px;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+  <div class="a">
+    <div class="aaa"></div>
+    <div class="aaa"></div>
+    <div class="aaa"></div>
+  </div>
+<script>
+   var aDiv=document.getElementsByClassName("aaa");
+   var abc=document.getElementsByClassName("abc")[0];
+   for(var i=0;i<aDiv.length;i++) {
+       aDiv[i].index = i;
+       aDiv[i].onmouseover = function () {
+           var c = this.offsetWidth;
+           var x = this;
+           var cIn = setInterval(function () {
+               if (c >= 500) {
+                   clearInterval(cIn);
+               } else {
+                   console.log("1");
+                   c = c + 50;
+                   x.style.width = c + "px";
+               }
+           }, 10);
+       }
+
+       aDiv[i].onmouseout = function () {
+           var c = this.offsetWidth;
+           var y = this;
+           var cIn = setInterval(function () {
+               if (c <= 200) {
+                   clearInterval(cIn);
+               } else {
+                   console.log("1");
+                   c = c - 50;
+                   y.style.width = c + "px";
+               }
+           }, 10);
+       }
+   }
+</script>
+</body>
+</html>
