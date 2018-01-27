@@ -84,9 +84,11 @@
     <script>
         var aUl=document.getElementsByTagName("ul");
         var aImg=aUl[0].getElementsByTagName("li");
+        var oBox=document.getElementsByClassName("box")[0];
         var aLbt=aUl[1].getElementsByTagName("li");
         var aRbt=aUl[2].getElementsByTagName("li");
         var globalIndex=0;
+        var xyz=true;
 
         function changeImg(index) {
             if(index==5){
@@ -123,6 +125,19 @@
                 }
 
             }
+        }
+
+        var timer=setInterval(function () {         //思路
+            if(xyz){
+                changeImg(++globalIndex);
+            }
+        },1000);
+
+        oBox.onmouseover=function () {
+            xyz=false;
+        }
+        oBox.onmouseout=function () {
+            xyz=true;
         }
     </script>
 </body>

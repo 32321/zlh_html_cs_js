@@ -23,14 +23,15 @@
    var abc=document.getElementsByClassName("abc")[0];
    for(var i=0;i<aDiv.length;i++) {
        aDiv[i].index = i;
+       aDiv[i].xx=i;
        aDiv[i].onmouseover = function () {
+           clearInterval(this.xx);
            var c = this.offsetWidth;
            var x = this;
-           var cIn = setInterval(function () {
+           x.xx= setInterval(function () {
                if (c >= 500) {
-                   clearInterval(cIn);
+                   clearInterval(x.xx);
                } else {
-                   console.log("1");
                    c = c + 50;
                    x.style.width = c + "px";
                }
@@ -38,13 +39,13 @@
        }
 
        aDiv[i].onmouseout = function () {
+           clearInterval(this.xx)
            var c = this.offsetWidth;
            var y = this;
-           var cIn = setInterval(function () {
+           y.xx = setInterval(function () {
                if (c <= 200) {
-                   clearInterval(cIn);
+                   clearInterval(y.xx);
                } else {
-                   console.log("1");
                    c = c - 50;
                    y.style.width = c + "px";
                }
