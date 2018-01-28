@@ -22,23 +22,23 @@
         .box{
             margin: 100px auto;
             text-align: center;
-            width: 300px;
+            width: 450px;
             height: 200px;
             position: relative;
             overflow: hidden;
             border: 5px solid #f5f5f5;
         }
         .content{
-            width: 300px;
+            width: 450px;
             height: 200px;
 
         }
         .box img{
-            width: 300px;
+            width: 450px;
             height: 200px;
         }
         .box .center{
-            width: 1500px;
+            width: 2250px;
             height: 200px;
             position: absolute;
         }
@@ -59,7 +59,7 @@
         }
         .cg .left{
              position: absolute;
-             left: 15px;
+             left: 10px;
              top: 170px;
          }
         .cg .right{
@@ -77,6 +77,12 @@
             color:#dddddd;
             line-height: 20px;
             margin-left: 5px;
+        }
+        .box .right li{
+            border:#35ff08 ;
+        }
+        .box .cg .active{
+            background-color: #35ff08;
         }
     </style>
 </head>
@@ -97,7 +103,7 @@
             <li>&gt;</li>
         </ul>
         <ul class="right">
-            <li>1</li>
+            <li class="active">1</li>
             <li>2</li>
             <li>3</li>
             <li>4</li>
@@ -109,18 +115,26 @@
     var oUl=document.getElementsByClassName("center")[0];
     var aMom=document.getElementsByClassName("left")[0];
     var aLi=aMom.getElementsByTagName("li");
+    var aRLi=document.getElementsByClassName("right")[0].getElementsByTagName("li");
+    var aImg=document.getElementsByTagName("img");
     var isRun=false;
-    var dir=20;
+    var dir=450;
+    var lr=true;
+    var timer;
     oUl.innerHTML+=oUl.innerHTML;
     oUl.style.width=oUl.offsetWidth*2+"px";
     aLi[0].onclick=function () {
         isRun=true;
-        dir=-20;
+        dir=-450;
+        lr=false;
     }
     aLi[1].onclick=function () {
         isRun=true;
-        dir=20;
+        dir=450;
+        lr=true;
     }
+    var tim=0,n=0;
+    var m=0;
     setInterval(function () {
            if(isRun){
                oUl.style.left=oUl.offsetLeft+dir+"px";
@@ -128,10 +142,57 @@
                    oUl.style.left=-oUl.offsetWidth/2+oUl.offsetWidth/10+"px";
                }
                if(oUl.offsetLeft>0){
-                   oUl.style.left=-oUl.offsetWidth/2+"px";
+                   oUl.style.left=-oUl.offsetWidth/2+dir+"px";
+               }
+               tim+=1000;
+               if(lr){
+                   if(tim==1000){
+                       for(var j=0;j<aRLi.length;j++){
+                           if(aRLi[j].className!==""){
+                               m=j;
+                               m++;
+                               if(m==aRLi.length){
+                                   m=0;
+                               }
+                           }
+                           aRLi[j].className="";
+                       }
+                       aRLi[m].className="active";
+                       tim=0;
+                   }
+               }else {
+                   if(tim==1000){
+                       for(var k=0;k<aRLi.length;k++){
+                           if(aRLi[k].className!==""){
+                               n=k;
+                               n--;
+                               if(n==-1){
+                                   n=aRLi.length-1;
+                               }
+                           }
+                           aRLi[k].className="";
+                       }
+                       aRLi[n].className="active";
+                       tim=0;
+                   }
                }
            }
-    },200);
+    },1000);
+    for(var i=0;i<aRLi.length;i++){
+        aRLi[i].index=i;
+        aRLi[i].onmouseover=function () {
+            isRun=false;
+            for(var j=0;j<aRLi.length;j++){
+                aRLi[j].className="";
+            }
+            this.className="active";
+            aImg[this.index].style.display="block";
+            oUl.style.left=-oUl.offsetWidth/10*(aRLi.length-this.index)+"px";
+        }
+        aRLi[i].onmouseout=function () {
+            isRun=true;
+        }
+    }
 </script>
 </body>
 </html>
