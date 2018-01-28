@@ -22,23 +22,23 @@
         .box{
             margin: 100px auto;
             text-align: center;
-            width: 450px;
+            width: 500px;
             height: 200px;
             position: relative;
             overflow: hidden;
             border: 5px solid #f5f5f5;
         }
         .content{
-            width: 450px;
+            width: 500px;
             height: 200px;
 
         }
         .box img{
-            width: 450px;
+            width: 500px;
             height: 200px;
         }
         .box .center{
-            width: 2250px;
+            width: 2500px;
             height: 200px;
             position: absolute;
         }
@@ -118,66 +118,67 @@
     var aRLi=document.getElementsByClassName("right")[0].getElementsByTagName("li");
     var aImg=document.getElementsByTagName("img");
     var isRun=false;
-    var dir=450;
+    var dir=10;
     var lr=true;
     var timer;
     oUl.innerHTML+=oUl.innerHTML;
     oUl.style.width=oUl.offsetWidth*2+"px";
     aLi[0].onclick=function () {
         isRun=true;
-        dir=-450;
+        dir=-10;
         lr=false;
     }
     aLi[1].onclick=function () {
         isRun=true;
-        dir=450;
+        dir=10;
         lr=true;
     }
     var tim=0,n=0;
     var m=0;
     setInterval(function () {
-           if(isRun){
-               oUl.style.left=oUl.offsetLeft+dir+"px";
-               if(oUl.offsetLeft==-oUl.offsetWidth+oUl.offsetWidth/10){
-                   oUl.style.left=-oUl.offsetWidth/2+oUl.offsetWidth/10+"px";
+           if(isRun) {
+               oUl.style.left = oUl.offsetLeft + dir + "px";
+               if (oUl.offsetLeft == -oUl.offsetWidth + oUl.offsetWidth / 10) {
+                   oUl.style.left = -oUl.offsetWidth / 2 + oUl.offsetWidth / 10 + "px";
                }
-               if(oUl.offsetLeft>0){
-                   oUl.style.left=-oUl.offsetWidth/2+dir+"px";
+               if (oUl.offsetLeft > 0) {
+                   oUl.style.left = -oUl.offsetWidth / 2 + dir + "px";
                }
-               tim+=1000;
-               if(lr){
-                   if(tim==1000){
-                       for(var j=0;j<aRLi.length;j++){
-                           if(aRLi[j].className!==""){
-                               m=j;
-                               m++;
-                               if(m==aRLi.length){
-                                   m=0;
-                               }
-                           }
-                           aRLi[j].className="";
-                       }
-                       aRLi[m].className="active";
-                       tim=0;
-                   }
-               }else {
-                   if(tim==1000){
-                       for(var k=0;k<aRLi.length;k++){
-                           if(aRLi[k].className!==""){
-                               n=k;
+               tim += 40;
+               if (lr) {
+                   if (tim == 2000) {
+                       for (var k = 0; k < aRLi.length; k++) {
+                           if (aRLi[k].className !== "") {
+                               n = k;
                                n--;
-                               if(n==-1){
-                                   n=aRLi.length-1;
+                               if (n == -1) {
+                                   n = aRLi.length - 1;
                                }
                            }
-                           aRLi[k].className="";
+                           aRLi[k].className = "";
                        }
-                       aRLi[n].className="active";
-                       tim=0;
+                       aRLi[n].className = "active";
+                       tim = 0;
+                   }
+               }
+               else {
+                   if (tim == 2000) {
+                       for (var j = 0; j < aRLi.length; j++) {
+                           if (aRLi[j].className !== "") {
+                               m = j;
+                               m++;
+                               if (m == aRLi.length) {
+                                   m = 0;
+                               }
+                           }
+                           aRLi[j].className = "";
+                       }
+                       aRLi[m].className = "active";
+                       tim = 0;
                    }
                }
            }
-    },1000);
+    },40);
     for(var i=0;i<aRLi.length;i++){
         aRLi[i].index=i;
         aRLi[i].onmouseover=function () {
@@ -186,8 +187,14 @@
                 aRLi[j].className="";
             }
             this.className="active";
-            aImg[this.index].style.display="block";
-            oUl.style.left=-oUl.offsetWidth/10*(aRLi.length-this.index)+"px";
+            console.log(this.index);
+            if(lr){
+                oUl.style.left=-oUl.offsetWidth/2-this.index*oUl.offsetWidth/10+"px";
+            }else {
+                oUl.style.left=-this.index*oUl.offsetWidth/10+"px";
+            }
+
+            console.log(oUl.offsetLeft);
         }
         aRLi[i].onmouseout=function () {
             isRun=true;
