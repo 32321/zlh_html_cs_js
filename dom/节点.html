@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span id="a">1</span>
+<span>2</span>
+<script>
+    function selSpan() {
+        var aSp=document.getElementsByTagName("span");
+        var c=document.getElementById("a").nextSibling;
+        for(var i=0;i<aSp.length;i++ ){
+           if(c.nodeType==1){
+               return c;
+           }
+           c=c.nextSibling;
+        }
+
+    }
+    console.log(selSpan());
+
+</script>
+</body>
+</html>

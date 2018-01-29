@@ -61,6 +61,7 @@
              position: absolute;
              left: 10px;
              top: 170px;
+            cursor: pointer;
          }
         .cg .right{
             position: absolute;
@@ -98,10 +99,10 @@
         </ul>
     </div>
     <div class="cg clearfix">
-        <ul class="left">
-            <li>&lt;</li>
-            <li>&gt;</li>
-        </ul>
+        <!--<ul class="left">-->
+            <!--<li>&lt;</li>-->
+            <!--<li>&gt;</li>-->
+        <!--</ul>-->
         <ul class="right">
             <li class="active">1</li>
             <li>2</li>
@@ -113,91 +114,42 @@
 </div>
 <script>
     var oUl=document.getElementsByClassName("center")[0];
-    var aMom=document.getElementsByClassName("left")[0];
-    var aLi=aMom.getElementsByTagName("li");
-    var aRLi=document.getElementsByClassName("right")[0].getElementsByTagName("li");
-    var aImg=document.getElementsByTagName("img");
-    var isRun=false;
-    var dir=10;
-    var lr=true;
+    var aLi=document.getElementsByClassName("right")[0].getElementsByTagName("li");
     var timer;
-    oUl.innerHTML+=oUl.innerHTML;
-    oUl.style.width=oUl.offsetWidth*2+"px";
-    aLi[0].onclick=function () {
-        isRun=true;
-        dir=-10;
-        lr=false;
-    }
-    aLi[1].onclick=function () {
-        isRun=true;
-        dir=10;
-        lr=true;
-    }
-    var tim=0,n=0;
-    var m=0;
-    setInterval(function () {
-           if(isRun) {
-               oUl.style.left = oUl.offsetLeft + dir + "px";
-               if (oUl.offsetLeft == -oUl.offsetWidth + oUl.offsetWidth / 10) {
-                   oUl.style.left = -oUl.offsetWidth / 2 + oUl.offsetWidth / 10 + "px";
-               }
-               if (oUl.offsetLeft > 0) {
-                   oUl.style.left = -oUl.offsetWidth / 2 + dir + "px";
-               }
-               tim += 40;
-               if (lr) {
-                   if (tim == 2000) {
-                       for (var k = 0; k < aRLi.length; k++) {
-                           if (aRLi[k].className !== "") {
-                               n = k;
-                               n--;
-                               if (n == -1) {
-                                   n = aRLi.length - 1;
-                               }
-                           }
-                           aRLi[k].className = "";
-                       }
-                       aRLi[n].className = "active";
-                       tim = 0;
-                   }
-               }
-               else {
-                   if (tim == 2000) {
-                       for (var j = 0; j < aRLi.length; j++) {
-                           if (aRLi[j].className !== "") {
-                               m = j;
-                               m++;
-                               if (m == aRLi.length) {
-                                   m = 0;
-                               }
-                           }
-                           aRLi[j].className = "";
-                       }
-                       aRLi[m].className = "active";
-                       tim = 0;
-                   }
-               }
-           }
-    },40);
-    for(var i=0;i<aRLi.length;i++){
-        aRLi[i].index=i;
-        aRLi[i].onmouseover=function () {
-            isRun=false;
-            for(var j=0;j<aRLi.length;j++){
-                aRLi[j].className="";
+    var globalIndex=0;
+    var ys=false;
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].index=i;
+        aLi[i].onmouseover=function () {
+            var the=this;
+            clearInterval(timer);
+            timer=setInterval(function () {
+                if(the.index>=globalIndex){
+                    if(oUl.offsetLeft==-oUl.offsetWidth/5*the.index){
+                        ys=true;
+                        clearInterval(timer);
+                        if(ys){
+                            globalIndex=the.index;
+                        }
+                    }else {
+                        oUl.style.left = oUl.offsetLeft - 20 + "px";
+                    }
+                }else {
+                    if(oUl.offsetLeft==-the.index*oUl.offsetWidth/5){
+                        ys=true;
+                        clearInterval(timer);
+                        if(ys){
+                            globalIndex=the.index;
+                        }
+                    }else {
+                        oUl.style.left=oUl.offsetLeft+20+"px";
+                    }
+                }
+            },50);
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].className="";
             }
-            this.className="active";
-            console.log(this.index);
-            if(lr){
-                oUl.style.left=-oUl.offsetWidth/2-this.index*oUl.offsetWidth/10+"px";
-            }else {
-                oUl.style.left=-this.index*oUl.offsetWidth/10+"px";
-            }
-
-            console.log(oUl.offsetLeft);
-        }
-        aRLi[i].onmouseout=function () {
-            isRun=true;
+            aLi[this.index].className="active";
         }
     }
 </script>
