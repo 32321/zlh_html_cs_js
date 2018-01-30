@@ -10,6 +10,7 @@
         }
         ul{
             list-style-type: none;
+            text-align: center;
         }
         .top{
             margin: 100px auto;
@@ -19,15 +20,56 @@
             color: #dddddd;
             font-weight: 300;
         }
+        p{
+            cursor: pointer;
+        }
+        .first{
+            background-color: #666666;
+        }
     </style>
 </head>
 <body>
     <div class="top">
         <p>第一题</p>
+        <div class="first"></div>
         <p>第二题</p>
+        <div class="first"></div>
     </div>
     <script>
-
+        var aP=document.getElementsByTagName("p");
+        var oD=document.getElementsByClassName("first");
+        function fun() {
+            var oU=document.createElement("ul");
+            var oL1=document.createElement("li");
+            var oL2=document.createElement("li");
+            var oL3=document.createElement("li");
+            oL1.innerHTML="JAVA宝典";
+            oL2.innerHTML="javascript高程";
+            oL3.innerHTML="剑指OFFER";
+            oU.appendChild(oL1);
+            oU.appendChild(oL2);
+            oU.appendChild(oL3);
+            return oU;
+        }
+        var fir=fun();
+        var sec=fun();
+        var i=1,j=1;
+        aP[0].onclick=function () {
+            if(i==1){
+                oD[0].appendChild(fir);
+            }else {
+                oD[0].removeChild(fir);
+            }
+            i=i*(-1);
+        }
+        aP[1].onclick=function () {
+            if(j==1){
+                oD[1].appendChild(sec);
+            }else {
+                oD[1].removeChild(sec);
+            }
+            j=j*(-1);
+        }
     </script>
 </body>
 </html>
