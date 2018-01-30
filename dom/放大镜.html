@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .small{
+            width: 200px;
+            height: 200px;
+        }
+        .big{
+            width: 400px;
+            height: 400px;
+            position:relative;
+            left:0;
+            top:0;
+
+        }
+        .use{
+            background-color: #dddddd;
+            opacity: 0.5;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        .left{
+           float: left;
+            width: 200px;
+            height: 200px;
+        }
+        .right{
+            float: left;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <img class="small" src="image/cookie.jpg" alt="">
+        <div class="use"></div>
+    </div>
+    <div class="right">
+        <img class="big" src="image/cookie.jpg" alt="">
+    </div>
+    <script>
+        var oImg=document.getElementsByClassName("big")[0];
+        var oBox=document.getElementsByClassName("use")[0];
+        oBox.onmousedown=function (e) {
+            document.onmousemove=function (e) {
+                var x=e.clientX-50;
+                var y=e.clientY-50;
+                if(x<0){
+                    x=0
+                }
+                if(y<0){
+                    y=0
+                }
+                if(x>100){
+                    x=100;
+                }
+                if(y>100){
+                    y=100;
+                }
+                oBox.style.left=x+"px";
+                oBox.style.top=y+"px";
+                oImg.style.left=-oBox.offsetLeft*2+"px";
+                oImg.style.top=-oBox.offsetTop*2+"px";
+            }
+            oBox.onmouseup=function () {
+                document.onmousemove=null;
+            }
+        }
+    </script>
+</body>
+</html>
