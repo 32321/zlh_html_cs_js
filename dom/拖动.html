@@ -18,18 +18,18 @@
 <body>
 <div id="box"></div>
 <script>
-    var oBox=document.getElementById("box");
-    oBox.onmousedown=function (e) {
-          var thisX=e.clientX-oBox.offsetLeft;
-          var thisY=e.clientY=oBox.offsetTop;
-      document.onmousemove=function (e) {
-          oBox.style.left=e.clientX-thisX+"px";
-          oBox.style.top=e.clientY-thisY+"px";
-      }
-      oBox.onmouseup=function () {
-          document.onmousemove=null;
-      }
-    }
+//    var oBox=document.getElementById("box");
+//    oBox.onmousedown=function (e) {
+//          var thisX=e.clientX-oBox.offsetLeft;
+//          var thisY=e.clientY=oBox.offsetTop;
+//      document.onmousemove=function (e) {
+//          oBox.style.left=e.clientX-thisX+"px";
+//          oBox.style.top=e.clientY-thisY+"px";
+//      }
+//      oBox.onmouseup=function () {
+//          document.onmousemove=null;
+//      }
+//    }
 
     var oD=document.getElementsByTagName("div")[0];
     var is=false;

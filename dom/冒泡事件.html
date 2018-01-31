@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            width: 400px;
+            height: 400px;
+            background-color: #d3160a;
+        }
+        .div2{
+            width: 300px;
+            height: 300px;
+            background-color: #bb880e;
+        }
+        .div3{
+            width: 200px;
+            height: 200px;
+            background-color: #00aaee;
+        }
+
+    </style>
+</head>
+<body>
+<div class="div1">
+    <div class="div2">
+        <div class="div3"></div>
+    </div>
+</div>
+<script>
+    var oDiv1=document.getElementsByClassName("div1")[0];
+    var oDiv2=document.getElementsByClassName("div2")[0];
+    var oDiv3=document.getElementsByClassName("div3")[0];
+//    oDiv1.onclick=function (e) {
+//        console.log("div1")
+//
+//    }
+//    oDiv2.onclick=function (e) {
+//        console.log("div2")
+//        e.stopPropagation();
+//    }
+//    oDiv3.onclick=function (e) {
+//        console.log("div3")
+////        console.log(e);
+//
+//    }
+
+//      oDiv3.addEventListener("click",function (e) {
+//          console.log("div3");
+//          e.stopPropagation();
+//      });
+//      oDiv2.addEventListener("click",function () {
+//        console.log("div2");
+//      });
+//      oDiv1.addEventListener("click",function () {
+//        console.log("div1");
+//     });
+      //事件捕获和事件冒泡区别以及执行顺序。
+//    function fun() {
+//        console.log("div1");//匿名函数不能用removeEventListener方法
+//        oDiv1.removeEventListener("click",fun);
+//    }
+//    function fun1() {
+//        console.log("div1-1-1");//匿名函数不能用removeEventListener方法
+//        oDiv1.removeEventListener("click",fun1);//此时只能点一次
+//    }
+//    oDiv1.addEventListener("click",fun);
+//    oDiv1.addEventListener("click",fun1);
+
+      function fn1() {
+          console.log(this);
+      }
+      function addEvent(ele,eve,fun) {
+          if(ele.addEventListener){
+              ele.addEventListener(eve,function () {
+//                  fun.call(ele);
+                  fun();
+              });
+          }else {
+              ele.attachEvent("on"+eve,function () {
+//                  fun.call(ele);
+                  fun();
+              });
+          }
+      }
+      addEvent(oDiv3,"click",fn1);
+
+//    function fn1() {
+//        console.log(1);
+//    }
+//    function removeEvent(ele,eve,fun) {
+//        if(ele.removeEventListener){
+//            ele.removeEventListener(eve,fun);
+//        }else {
+//            ele.detachEvent("on"+eve,fun);
+//        }
+//    }
+//    removeEvent(oDiv3,"click",fn1);
+</script>
+</body>
+</html>
