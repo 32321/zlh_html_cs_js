@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        div{
+            width: 400px;
+            height: 400px;
+        }
+        button{
+            width: 50px;
+            height: 20px;
+            background-color: #dddddd;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div>
+    <h2>你最喜欢的运动是什么</h2>
+    篮球 <input type="checkbox" name="sport">
+    足球 <input type="checkbox" name="sport">
+    排球 <input type="checkbox" name="sport">
+    羽毛球 <input type="checkbox" name="sport"><br>
+    <button>全选</button>
+    <button>全不选</button>
+    <button>反选</button>
+</div>
+<script>
+    var $input=$("div > input");
+    var $button=$("div > button");
+    $button.click(function () {
+        if($(this).index()===$button.eq(0).index()){
+            $input.prop("checked",true);
+        }
+        if($(this).index()==$button.eq(1).index()){
+            $input.prop("checked",false);
+        }
+        if($(this).index()==$button.eq(2).index()){
+            for(var i=0;i<$input.length;i++){
+                if($input.eq(i).prop("checked")){
+                    $input.eq(i).prop("checked",false);
+                }else {
+                    $input.eq(i).prop("checked",true);
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
