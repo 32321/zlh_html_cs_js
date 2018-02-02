@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>两栏布局</title>
+<style>
+html, body, div, p {
+	margin: 0;
+	padding: 0
+}
+h3{
+	padding:0 20px
+}
+div{
+	height: 300px;
+}
+.col-sub {
+	width:200px; 
+	background:#000;
+	color:#fff;
+	float:left; 
+	margin-left:-100%;
+}
+.col-extra{
+	width:200px;
+	background:#efefef;
+	float:left; 
+	margin-left:-200px;
+}
+.col-main {
+	width:100%;
+	float: left
+}
+.col-main .main-con {
+	padding-left:200px;
+	padding-right:200px
+}
+.col-main .main-con p {
+	padding: 20px
+}
+</style>
+</head>
+
+<body>
+	<div class="col-main">
+		<div class="main-con">
+			<h3>主体内容区块</h3>
+			<p>中间区域</p>
+		</div>
+	</div>
+	<div class="col-sub">
+		<h3>左侧侧功能导航区块</h3>
+	</div>
+	<div class="col-extra">
+		<h3>右侧辅助功能区</h3>
+	</div>
+</body>
+</html>

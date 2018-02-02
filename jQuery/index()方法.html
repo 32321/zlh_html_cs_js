@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+</div>
+<script>
+    var $ul=$("ul");
+    var $li=$("li");
+    console.log($ul.index());
+    console.log($li.index());
+    $li.click(function () {
+        if($(this).index()===$li.eq(0).index()){
+            console.log($(this)+" "+$li.eq(0));
+        }else {
+            console.log("haha");
+        }
+    });
+    $ul.click(function (event) {
+        var $cli=$(event.target);
+        $cli.insertAfter("abcd");
+        $cli.css("color","red");
+    });
+</script>
+</body>
+</html>
