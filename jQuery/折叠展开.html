@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>折叠隐藏</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+        .content{
+            background-color: #666666;
+            width: 200px;
+            height: 350px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        p{
+            background-color: #cccccc;
+        }
+        li > ul{
+            display: none;
+        }
+        .aa{
+            display: block;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div class="content">
+        <ul>
+            <li class="view">
+                <p>这是第零次</p>
+                <ul>
+                    <li>MMM</li>
+                    <li>NNN</li>
+                    <li>OOO</li>
+                </ul>
+            </li>
+            <li class="view">
+                <p>这是第一次</p>
+                <ul>
+                    <li>AAA</li>
+                    <li>BBB</li>
+                    <li>CCC</li>
+                </ul>
+            </li>
+            <li class="view">
+                <p>这是第二次</p>
+                <ul>
+                    <li>DDD</li>
+                    <li>EEE</li>
+                    <li>FFF</li>
+                </ul>
+            </li>
+            <li class="view">
+                <p>这是第三次</p>
+                <ul>
+                    <li>XXX</li>
+                    <li>YYY</li>
+                    <li>ZZZ</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $("p").on("click",function () {
+           $(this).next("ul").toggleClass("aa");
+        })
+    </script>
+</body>
+</html>

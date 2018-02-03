@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div>
+        <input type="text"><br>
+        <p>01</p>
+        <p>02</p>
+        <p>007</p>
+        <p>04</p>
+        <p>05</p>
+    </div>
+    <script>
+        $(function () {
+            $("input").on("click",function () {
+                var text=$("p:contains('007')").html();
+                $("p:even").css("color","yellow");
+                $("p:odd").css("color","orange");
+                $(this).val(text);
+            })
+        })
+    </script>
+</body>
+</html>
