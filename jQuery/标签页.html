@@ -29,13 +29,13 @@
             line-height: 100px;
             cursor: pointer;
         }
-        .nav li:first-child{
-            background-color: #b2591b;
-        }
-        .aa{
+        .nav .active{
+             background-color: #b2591b;
+         }
+        .content ul{
             display: none;
         }
-        .active{
+        .content .active{
             display: block;
         }
     </style>
@@ -44,24 +44,24 @@
 <body>
     <div class="box">
         <ul class="nav">
-            <li>第一讲</li>
+            <li class="active">第一讲</li>
             <li>第二讲</li>
-            <li>第三讲</li>
+            <li >第三讲</li>
         </ul>
         <div class="content">
-        <ul class="aa active">
+        <ul class="active">
             <li>fygyeg</li>
             <li>hvytnviur</li>
             <li>eruegy</li>
             <li>emucreg</li>
         </ul>
-        <ul class="aa">
+        <ul>
             <li>jdhuhweui </li>
             <li>fjugreugh</li>
             <li>weiufhufre</li>
             <li>ehfurhgru</li>
         </ul>
-        <ul class="aa">
+        <ul>
             <li>jkfhureghr</li>
             <li>ef hurhg</li>
             <li>iguth</li>
@@ -83,11 +83,20 @@
 //            });
 //        }
 
+//        $(".nav > li").click(function () {
+//            $(".content > ul").css("display","none");
+//            $(".nav > li").css("background-color","#00aaee")
+//            $(".content > ul").eq($(this).index()).css("display","block");
+//            $(".nav > li").eq($(this).index()).css("background-color","#b2591b");
+//        })
+
+//        $(".nav > li").click(function () {
+//            $(this).addClass("active").siblings().removeClass("active");
+//            $(".content > ul").eq($(this).index()).addClass("active").siblings().removeClass("active");
+//        })
+
         $(".nav > li").click(function () {
-            $(".content > ul").css("display","none");
-            $(".nav > li").css("background-color","#00aaee")
-            $(".content > ul").eq($(this).index()).css("display","block");
-            $(".nav > li").eq($(this).index()).css("background-color","#b2591b");
+            $(this).add($(".content > ul").eq($(this).index())).addClass("active").siblings().removeClass("active");
         })
     </script>
 </body>

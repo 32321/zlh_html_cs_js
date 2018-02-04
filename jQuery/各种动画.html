@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <style>
+        button{
+            width: 100px;
+            height: 40px;
+        }
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: #d3160a;
+        }
+    </style>
+</head>
+<body>
+<button id="hide">hide</button>
+<button id="show">show</button>
+<button id="toggle">toggle</button>
+<button id="fadeIn">fadeIn</button>
+<button id="fadeOut">fadeOut</button>
+<button id="fadeTo">fadeTo</button>
+<button id="fadeToggle">fadeToggle</button>
+<button id="slideDown">slideDown</button>
+<button id="slideUp">slideUp</button>
+<button id="slideToggle">slideToggle</button>
+<button id="animate">animate</button>
+<div></div>
+<script>
+    $("#hide").click(function () {
+        $("div").hide();
+    });
+    $("#show").click(function () {
+        $("div").show();
+    });
+    $("#toggle").click(function () {
+        $("div").toggle(function () {
+            console.log("toggle")
+        });
+    });
+    $("#fadeIn").click(function () {
+        $("div").fadeIn();
+    });
+    $("#fadeOut").click(function () {
+        $("div").fadeOut();
+    });
+    $("#fadeTo").click(function () {
+        $("div").fadeTo(600,0.5);
+    });
+    $("#fadeToggle").click(function () {
+        $("div").fadeToggle(1000);
+    });
+    $("#slideDown").click(function () {
+        $("div").slideDown();
+    });
+    $("#slideUp").click(function () {
+        $("div").slideUp();
+    });
+    $("#slideToggle").click(function () {
+        $("div").slideToggle();
+    });
+    $("#animate").click(function () {
+        $("div").animate({
+            opacity:0.25,
+            height:600,
+            width:888
+        },5000,"easeInBack");
+    });
+</script>
+</body>
+</html>
