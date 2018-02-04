@@ -168,16 +168,7 @@
     </div>
     <script>
         var pay=0,money=0,index,floor,th;
-        for(var i=0;i<$(".content span").length;i++){
-            var ran=Math.random()*11+1;
-            if(ran>=1&&ran<7){
-                $(".content span").eq(i).addClass("bb");//待售
-            }
-            if(ran>=7){
-                $(".content span").eq(i).addClass("cc");//禁售
-            }
-        }
-        $(".content span").attr("payadd","a");
+        color();
         $(".content span").click(function () {
             if($(this).hasClass("cc")){
                     alert("此座位不可选购");
@@ -185,41 +176,23 @@
                     if($(this).attr("payadd")==="a"){
                         pay+=1;
                         if(pay<=5){
-                            index=$(".content span").index($(this))+1;
-                            if(index<=32){
-                                if(index%4===0){
-                                    floor=Math.floor(index/4);
-                                    th=4;
-                                }else {
-                                    floor=Math.floor(index/4)+1;
-                                    th=index%4;
-                                }
-                            }else{
-                                index-=32;
-                                if(index%4===0){
-                                    floor=Math.floor(index/4);
-                                    th=8;
-                                }else {
-                                    floor=Math.floor(index/4)+1;
-                                    th=index%4+4;
-                                }
-                            }
-                            console.log(floor+" "+th);
                             $(this).attr("payadd","bbb");
-                            $(".sel").append("<span class='on'>"+floor+"排"+th+"座</span>");
+                            index=$(".content span").index($(this))+1;
+                            $(".sel").append("<span class='on'>"+site(index)+"座</span>");
                             $(this).toggleClass("active");
                             money=99*pay;
                             $("#money span:eq(1)").html("￥"+money);
                             $("#money span:last-child").html("￥99*"+pay);
                         }else {
-                            alert("最多可选择5个座位");
+                            alert("择最多可选5个座位");
                         }
                     }else {
                         if(pay>5){
                             pay=5;
                         }
                         pay-=1;
-                        $(".on:eq("+pay+")").remove();
+                        index=$(".content span").index($(this))+1;
+                        $("span:contains("+site(index)+")").remove();
                         $(this).attr("payadd","a");
                         $(this).toggleClass("active");
                         money=99*pay;
@@ -228,6 +201,41 @@
                     }
                 }
         });
+
+        function color() {//给那个座位初始作色
+            for(var i=0;i<$(".content span").length;i++){
+                var ran=Math.random()*11+1;
+                if(ran>=1&&ran<7){
+                    $(".content span").eq(i).addClass("bb");//待售
+                }
+                if(ran>=7){
+                    $(".content span").eq(i).addClass("cc");//禁售
+                }
+            }
+            $(".content span").attr("payadd","a");
+        }
+
+        function site(index) {//生成座位
+            if(index<=32){
+                if(index%4===0){
+                    floor=Math.floor(index/4);
+                    th=4;
+                }else {
+                    floor=Math.floor(index/4)+1;
+                    th=index%4;
+                }
+            }else{
+                index-=32;
+                if(index%4===0){
+                    floor=Math.floor(index/4);
+                    th=8;
+                }else {
+                    floor=Math.floor(index/4)+1;
+                    th=index%4+4;
+                }
+            }
+            return floor+"排"+th;
+        }
     </script>
 </body>
 </html>
