@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <p>你最爱好的运动是什么?<input id="allornot" type="checkbox" value="全选/全不选">全选/全不选</p>
+    <div>
+    <input class="sel" type="checkbox" name="sport" value="跑步">跑步
+    <input class="sel" type="checkbox" name="sport" value="篮球">篮球
+    <input class="sel" type="checkbox" name="sport" value="足球">足球
+    <input class="sel" type="checkbox" name="sport" value="排球">排球
+    </div>
+    <input type="submit" id="sub" value="提交">
+    <script>
+        var z=0,arr=[];
+        $("input[name='sport']").click(function () {
+            if($(this).attr("a")=="b"){
+                $(this).prop("checked",false);
+                $(this).attr("a","")
+                z--;
+                $("#allornot").prop("checked",false);
+                arr.splice(arr.indexOf($(this).prop("value")),1);
+            }else {
+                if(z<4){
+                    $("#allornot").prop("checked",false);
+                }
+                $(this).prop("checked",true);
+                $(this).attr("a","b")
+                z++;
+                arr.push($(this).prop("value"));
+            }
+            if(z===4){
+                $("#allornot").prop("checked",true);
+            }
+        });
+        $("#allornot").trigger("click");
+        $("#sub").click(function () {
+            alert("你所选择的项目是:\n"+arr.join("\n"));
+        });
+    </script>
+</body>
+</html>

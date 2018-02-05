@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人基本信息</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+        div{
+            margin-bottom: 10px;
+        }
+        input{
+            outline: none;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<form action="post">
+    <fieldset>
+        <legend>个人基本信息</legend>
+        <div>
+            <lable for="name">名称</lable>
+            <input type="text" id="name" placeholder="张三">
+        </div>
+        <div>
+            <lable for="password">密码</lable>
+            <input type="password" id="password" placeholder="wawawa">
+        </div>
+        <div>
+            <lable for="detail">详细信息</lable>
+            <textarea name="" id="detail" cols="20" rows="3">ffes</textarea>
+        </div>
+    </fieldset>
+</form>
+<script>
+    var t,t1;
+    $(":input").focus(function () {
+        t1=this.defaultValue;
+//        $(this).val("");
+        $(this).css("background","#b2e");
+    }).blur(function () {
+        t=$(this).val();
+        $(this).css("background","");
+        if(t===""){
+            $(this).val(t1);
+        }else {
+            $(this).val(t);
+        }
+    });
+</script>
+</body>
+</html>

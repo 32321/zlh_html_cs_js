@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ScrollTop</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <style>
+        textarea{
+            height: 300px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button id="top">向上</button>
+    <button id="bottom">向下</button>
+</div>
+<form action="">
+    <textarea name="" id="" cols="60" rows="10">
+        ryrrutrefuierfhuxfhoupodjwlfybefuwziudwgyu
+        如何以一个可理解并易于访问的形式在网页中展示一个表格化数据一向都是个不小的挑战。这个模块涵盖了基本的表格table标记，以及一些更复杂的特性，比如使用标题和总结等。
+HTML表单
+表单是构成Web世界的重要组成部分——他们提供了大量的你所需要用来与网站进行交互所需的功能。比如注册、登录、发送评论反馈、购买商品等等。这个模块将带领你建立一个客户端部分的表单。
+用HTML解决常见问题
+该部分提供了一些链接，这些链接指向那些在你构建Web页面的过程中最常遇到的问题的解决方法：如何处理网页标题、添加图片和视频、强调某些内容、建立基本的表单等。
+        全局属性可以在所有HTML元素上进行设置。即使那些没有在相关标准中出现的元素也一样。这就意味着那些非标准的元素也同样会实现这些属性，即使这些元素使得文档并不符合HTML5标准。
+內联元素和块级元素
+HTML元素通常是"內联"或"块级"元素。一个內联元素仅会占用由定义它的标签所包裹起来的空间。而一个块级元素将会占用其父元素（容器）的全部空间，也就是创建一个“块”
+链接类型
+在HTML中，各种各样的链接类型被用来确立和定义两个文档之间的关系。不同类型的链接（Link）会通过包括<a>，<area>，and <link>等元素进行设置。
+HTML的audio与video元素所支持的媒体格式
+<audio>和<video>元素允许你播放视频和音频媒体文件。这些元素提供了一个浏览器原生的对与Adobe Flash 和其他外挂组件的替代品。
+其他HTML内容（高级）
+HTML包含了大量的不同类型的内容，每种内容在特定的情景上下文中有效，而在其他上下文中无效。类似地，每种内容也包含了一组关于其他类型内容的配置，包括哪些内容类型和元素可以或不可以被包含包含并使用。这里提供了一个关于这些分类的说明。
+相关主题
+使用CSS为HTML元素添颜色
+如果需要使用CSS为HTML内容增加颜色，这篇文章涵盖了绝大多数的途径和方式，并列举了哪部分HTML文档内容可以进行上色以及这一操作将会涉及到哪些CSS属性。同时包含了一些示例以及到一些配色建构工具的链接，以及一些其他内容
+    </textarea>
+</form>
+<script>
+    $("#top").click(function () {
+        $("textarea").stop()
+        $("textarea").animate({
+            scrollTop:0
+        },2000)
+    });
+    $("#bottom").click(function () {
+        $("textarea").stop()
+            $("textarea").animate({
+                scrollTop:2500
+            },3000)
+    });
+//    $("textarea").scroll(function () {
+//        $("textarea").val($("textarea").val()+"nidufgygwefygyaxjhbajhvxxfwqj");
+//    })
+</script>
+</body>
+</html>
