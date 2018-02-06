@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器-1</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <style>
+        #box3{
+            width: 200px;
+            height: 200px;
+            background-color: #696969;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1
+        <div class="box2">2
+            <p class="block">3</p>
+            <div>AAA</div>
+            <div>BBB</div>
+        </div>
+        <ul>
+            <li>
+                <div>
+                    <ul>
+                        <li>a</li>
+                        <li>b</li>
+                        <li>c</li>
+                    </ul>
+                </div>
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div id="box3">M</div>
+
+    <ul class="oUl">
+        <li>
+            <ul>
+                <li>A</li>
+                <li class="oLi">B</li>
+                <li>C</li>
+                <li>D</li>
+                <li>E</li>
+            </ul>
+        </li>
+        <li>M</li>
+        <li>N</li>
+        <li>P</li>
+        <li>O</li>
+        <li>R</li>
+    </ul>
+    <script>
+        $(".box1").add(".box2").add(".block").css("color","red");
+        $(".box1 > .box2").add(".box2 > .block").css("color","blue");
+        $(".box1 div").css("color","pink");
+        $("li ~ li").css("color","black");
+        $("p + div").css("color","green");
+
+        $("#box3").click(function () {
+            $("#box3").stop();
+            $("#box3").slideToggle(2000);
+            $(":animated").css("background-color","red");
+        });
+
+        $(".oUl > li:eq(2)").css("color","red");
+        $(".oUl > li:even").css("color","pink");
+        $(".oUl > li:first").css("color","orange");
+        $(".oUl li:gt(2)").css("border","1px solid");
+        $(".oUl ul:not(.oLi)").css("padding","10px");
+    </script>
+</body>
+</html>
