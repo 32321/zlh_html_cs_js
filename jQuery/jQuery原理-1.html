@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Cat() {
+        this.name="xiaomiao"
+    }
+    Cat.prototype.eat=function () {
+        alert("hello"+" "+this.name);
+    }
+    var cat1=new Cat();
+////    alert(cat1.name);
+    cat1.eat();
+
+</script>
+</body>
+</html>
