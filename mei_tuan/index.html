@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>美团网</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        .clearfix:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        body,ul{
+            margin: 0;
+            padding:0;
+        }
+        li{
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="nav">
+        <div class="box clearfix">
+            <div class="left">
+                <i class="iconfont">&#xe6a2;</i>
+                <span class="checked">北京</span>
+                <a href="#" class="cg-city">切换城市</a>
+                <span>[</span>
+                <a href="#">大厂回族自治县</a>
+                <a href="#">廊坊</a>
+                <a href="#">三河</a>
+                <span>]</span>
+            </div>
+            <div class="login">
+                <a href="#" class="login-on">立即登录</a>
+                <a href="#">注册</a>
+            </div>
+            <div class="right clearfix">
+                <ul class="cate">
+                    <li>
+                        <a href="#">我的美团</a>
+                            <ul class="my-mt">
+                                <li><a href="#">我的订单</a></li>
+                                <li><a href="#">我的评价</a></li>
+                                <li><a href="#">我的收藏</a></li>
+                                <li><a href="#">抵用卷</a></li>
+                                <li><a href="#">账户设置</a></li>
+                            </ul>
+                    </li>
+                    <li><a href="#">手机APP</a></li>
+                    <li>
+                        <a href="#">商家中心</a>
+                        <ul class="my-mt shop-cen">
+                            <li><a href="#">登录商家中心</a></li>
+                            <li><a href="#">我想合作</a></li>
+                            <li><a href="#">手机免费开店</a></li>
+                            <li><a href="#">餐饮代理商招募</a></li>
+                            <li><a href="#">商家申请开票</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">网站导航</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/base.js"></script>
+</body>
+</html>

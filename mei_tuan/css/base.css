@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.nav{
+    width: 100%;
+    height: 40px;
+    background-color: #f8f8f8;
+}
+.nav .box{
+    width: 1190px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #757575;
+}
+.nav .left,.nav .login,.nav .right{
+    line-height: 40px;
+    float: left;
+}
+.nav .right{
+    float: right;
+    height: 40px;
+}
+.nav  .cate>li{
+    display: inline-block;
+    line-height: 40px;
+    vertical-align: top;
+    padding: 0 15px;
+    text-align: center;
+}
+.nav .box .login{
+    margin-left: 25px;
+}
+.nav .box a{
+    color: #999;
+}
+.nav .left .cg-city{
+    color: #666;
+    border: 1px solid #e5e5e5;
+}
+.nav .left .checked{
+    color: #666;
+}
+.nav .login .login-on{
+    color:#31BBAC;;
+}
+.nav .box a:hover{
+    color: #31BBAC;;
+}
+.nav .box .my-mt{
+    text-align: center;
+    background-color: #ffffff;
+    z-index: 10;
+    display: none;
+}
+.nav .box .shop-cen{
+    width: 120%;
+}
+.nav .my-mt li{
+    display: block;
+}
