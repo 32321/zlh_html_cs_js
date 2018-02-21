@@ -21,5 +21,19 @@
             oDiv1.style.background="red";
         }
     </script>
+    <script>
+        function fun1() {
+            console.log(this);//window  此时调用者是window
+            return {
+                name: "haha",
+                age: 18,
+                to: function () {
+                    console.log(this.name + " " + this.age);//fun1()  此时调用者是fun1()
+                }
+            }
+        }
+        window.fun1().to();
+        fun1().to();
+    </script>
 </body>
 </html>
