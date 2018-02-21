@@ -36,8 +36,9 @@
     display: inline-block;
     line-height: 40px;
     vertical-align: top;
-    padding: 0 15px;
+    padding: 0 10px;
     text-align: center;
+    border:1px solid #e5e5e5;
 }
 .nav .box .login{
     margin-left: 25px;
@@ -62,10 +63,7 @@
     text-align: center;
     background-color: #ffffff;
     z-index: 10;
-    display: none;
-}
-.nav .box .shop-cen{
-    width: 120%;
+    display: block;
 }
 .nav .my-mt li{
     display: block;

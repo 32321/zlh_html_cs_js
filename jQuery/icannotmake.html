@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stydy</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        li{
+            list-style-type: none;
+        }
+        .box{
+            width: 200px;
+            margin-top: 50px;
+        }
+        .box > ul > li{
+            position: relative;
+        }
+        .box ul p{
+            text-align: center;
+            padding: 5px 0;
+            border: 1px solid #ffffff;
+            border-bottom-color: #696969;
+        }
+        .box .active p{
+            border: 1px solid #40aa53;
+            border-left: none;
+            border-right: none;
+            position: relative;
+            z-index:10;
+            background-color:white;
+        }
+        .box ul ul{
+            display: none;
+            position: absolute;
+            top:0;
+            z-index: 5;
+            left: 199px;
+            width: 200px;
+            border: 1px solid #40aa53;
+            text-align: center;
+        }
+        .box .active ul{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-box">
+        <ul>
+            <li>
+                <p>菜单一</p>
+                <ul>
+                    <li>菜单一的内容一</li>
+                    <li>菜单一的内容二</li>
+                    <li>菜单一的内容三</li>
+                    <li>菜单一的内容四</li>
+                    <li>菜单一的内容五</li>
+                </ul>
+            </li>
+            <li>
+                <p>菜单二</p>
+                <ul>
+                    <li>菜单二的内容一</li>
+                    <li>菜单二的内容二</li>
+                </ul>
+            </li>
+            <li>
+                <p>菜单三</p>
+                <ul>
+                    <li>菜单三的内容一</li>
+                    <li>菜单三的内容二</li>
+                    <li>菜单三的内容三</li>
+                    <li>菜单三的内容四</li>
+                    <li>菜单三的内容五</li>
+                    <li>菜单三的内容六</li>
+                </ul>
+            </li>
+            <li>
+                <p>菜单四</p>
+                <ul>
+                    <li>菜单四的内容一</li>
+                    <li>菜单四的内容二</li>
+                    <li>菜单四的内容三</li>
+                    <li>菜单四的内容四</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="box">
+        <ul>
+            <li>
+                <p>菜单一</p>
+                <ul>
+                    <li>菜单一的内容一</li>
+                    <li>菜单一的内容二</li>
+                    <li>菜单一的内容三</li>
+                    <li>菜单一的内容四</li>
+                </ul>
+            </li>
+            <li>
+                <p>菜单二</p>
+                <ul>
+                    <li>菜单二的内容一</li>
+                    <li>菜单二的内容二</li>
+                </ul>
+            </li>
+            <li>
+                <p>菜单三</p>
+                <ul>
+                    <li>菜单三的内容一</li>
+                    <li>菜单三的内容二</li>
+                    <li>菜单三的内容三</li>
+                </ul>
+            </li>
+            <li>
+                <p>菜单四</p>
+                <ul>
+                    <li>菜单四的内容一</li>
+                    <li>菜单四的内容二</li>
+                </ul>
+            </li>
+            <li>
+                <p>菜单五</p>
+                <ul>
+                    <li>菜单五的内容一</li>
+                    <li>菜单五的内容二</li>
+                    <li>菜单五的内容三</li>
+                </ul>
+            </li>
+            <li>
+                <p>菜单六</p>
+                <ul>
+                    <li>菜单六的内容一</li>
+                    <li>菜单六的内容二</li>
+                    <li>菜单六的内容三</li>
+                    <li>菜单六的内容四</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $(".box > ul > li").mouseover(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+    </script>
+</body>
+</html>
