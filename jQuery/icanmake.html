@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>ican</title>
     <style>
+        /** reset **/
         *{
             margin: 0;
             padding: 0;
@@ -11,9 +12,15 @@
         ul{
             list-style-type: none;
         }
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        /* 垂直导航 */
         .box{
             width: 200px;
-            margin-top: 50px;
+            /*margin-top: 50px;*/
         }
         .box > ul > li{
             position: relative;
@@ -45,10 +52,90 @@
         .box .active ul{
             display: block;
         }
+        /** 水平垂直 **/
+        .box-box{
+            float: right;
+            width: 500px;
+            margin-right: 10px;
+        }
+        .box-box > ul > li{
+            position: relative;
+            padding: 0 25px;
+            width: 70px;
+            float: left;
+            text-align: center;
+            margin-left: 5px;
+        }
+        .box-box li p{
+            float: left;
+            padding: 10px 10px;
+            text-align: center;
+
+        }
+        .box-box .active p{
+            border: 1px solid #00aaee;
+            border-bottom: none;
+            position: relative;
+            z-index:10;
+            background-color: white;
+        }
+        .box-box .active ul{
+            display: block;
+            z-index:5;
+            border: 1px solid #bb880e;
+        }
+        .box-box li ul{
+            display: none;
+            width: 120px;
+            position: absolute;
+            left: 0;
+            top: 41px;
+            text-align: center;
+        }
     </style>
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
+    <div class="box-box clearfix">
+        <ul class="clearfix">
+            <li>
+                <p>菜单一</p>
+                <ul>
+                    <li>菜单一的内容一</li>
+                    <li>菜单一的内容二</li>
+                    <li>菜单一的内容三</li>
+                </ul>
+            </li>
+            <li>
+                <p>菜单二</p>
+                <ul>
+                    <li>菜单二的内容一</li>
+                    <li>菜单二的内容二</li>
+                    <li>菜单二的内容三</li>
+                    <li>菜单二的内容四</li>
+                    <li>菜单二的内容五</li>
+                </ul>
+            </li>
+            <li>
+                <p>菜单三</p>
+                <ul>
+                    <li>菜单三的内容一</li>
+                    <li>菜单三的内容二</li>
+                    <li>菜单三的内容三</li>
+                    <li>菜单三的内容四</li>
+                    <li>菜单三的内容五</li>
+                    <li>菜单三的内容六</li>
+                </ul>
+            </li>
+            <li>
+                <p>菜单四</p>
+                <ul>
+                    <li>菜单四的内容一</li>
+                    <li>菜单四的内容二</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
     <div class="box">
         <ul>
             <li>
@@ -114,7 +201,7 @@
         </ul>
     </div>
     <script>
-        $(".box > ul > li").mouseover(function () {
+        $("div > ul > li").mouseover(function () {
             $(this).addClass("active").siblings().removeClass("active");
         })
     </script>

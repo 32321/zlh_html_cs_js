@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解构赋值</title>
+</head>
+<body>
+<script>
+    //解构赋值可以大大减少代码量。
+    // 当给函数传递参数是需要传递一个对象的多个参数时，需要将对象作为实参，用到了解构赋值
+    let x=6,y=5;
+    console.log("x="+x+" "+"y="+y);
+    if(x>y){
+        [x,y]=[y,x];//交换值
+    }
+    console.log("x="+x+" "+"y="+y);
+
+    var person={
+        age : 18,
+        name: "xiaoming",
+        clothes:{
+            shirt:"shaqi",
+            pink:'niuzai',
+            cap:"cha",
+        }
+    }
+    var {age:suishu,name,gender="male",clothes:{pink}}=person;//默认值   别名  嵌套
+    console.log(suishu+" "+name+" "+gender+" "+pink);
+</script>
+</body>
+</html>

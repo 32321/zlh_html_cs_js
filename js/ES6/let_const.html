@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let&&const</title>
+</head>
+<body>
+<script>
+    let a=12;//使用let要修改使用的js版本，变成ES6版本。
+    if(a>10){
+        let b=8;
+        console.log(a);
+    }
+    //console.log(b);//会报错 Uncaught ReferenceError: b is not defined   因为let申明的变量是有块级作用域的。
+    //所谓块级作用域的意思是在{}中的语句块。let申明的变量只能在{}中有效，出了{}变量就会失效。
+
+    const ABC=100;
+    //ABC=10;//报错  Assignment to constant variable. 常量的值一旦被赋值，就不能改变，
+    // 否则会报错。const申明的变量也是有块级作用域的
+
+    if(ABC===100){
+        const D=999;
+        console.log(ABC);
+    }
+    console.log(D);//会报错  D is not defined  因为const申明的变量是有块级作用域的。
+</script>
+</body>
+</html>
