@@ -34,6 +34,14 @@
         }
         window.fun1().to();
         fun1().to();
+
+        var oldParseInt=parseInt;               //重写了parseInt方法。
+        var count=0;
+        window.parseInt=function(){
+            count+=1;
+            return oldParseInt.apply(null,arguments);//apply重新给this设置了null的值
+        }
+        console.log(parseInt("10")+parseInt("20")+parseInt("30")+" "+count);
     </script>
 </body>
 </html>
