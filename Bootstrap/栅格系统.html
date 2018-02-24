@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>栅格系统</title>
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style>
+        *{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!--所在行再分为12列   col-xs-*表示手机端的类无论在何种设备上都是水平排列的
+   col-sm-* col-md-* col-lg-*分别是平板，中等屏幕，大屏幕使用的类，
+   刚开始是堆叠在一起的，当到达指定的设备上时，就会呈水平排列。
+   当一行的列数大于12时，会自动排列到下一行。
+   col-*-offset-*表示向右偏移*格   实际上是为当前格设置了margin值。
+   container类为元素设置了固定的长度并支持响应式布局
+   container-fluid为元素设置了100%的长度，占了viewport的全部长度。
+    -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">col-md-4</div>
+            <div class="col-md-4">col-md-4</div>
+            <div class="col-md-4">col-md-4</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1">col-xs-1</div>
+            <div class="col-xs-1">col-xs-1</div>
+            <div class="col-xs-1">col-xs-1</div>
+            <div class="col-xs-1">col-xs-1</div>
+            <div class="col-xs-1">col-xs-1</div>
+            <div class="col-xs-1">col-xs-1</div>
+            <div class="col-xs-1">col-xs-1</div>
+            <div class="col-xs-1">col-xs-1</div>
+            <div class="col-xs-1">col-xs-1</div>
+            <div class="col-xs-1">col-xs-1</div>
+            <div class="col-xs-1">col-xs-1</div>
+            <div class="col-xs-1">col-xs-1</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">col-sm-6</div>
+            <div class="col-sm-6">col-sm-6</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">col-lg-6</div>
+            <div class="col-lg-6">col-lg-6</div>
+            <div class="col-lg-6">col-lg-6</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">col-lg-4</div>
+            <div class="col-lg-4 col-lg-offset-4">col-lg-4</div>
+        </div>
+    </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">col-md-4</div>
+        <div class="col-md-4">col-md-4</div>
+        <div class="col-md-4">col-md-4</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">col-md-4</div>
+        <div class="col-md-4">col-md-4</div>
+        <div class="col-md-4 col-md-offset-4">col-md-4</div>
+    </div>
+</div>
+<p class="container">aaaaaa</p>
+<p class="container-fluid">bbbbbbb</p>
+<!--   栅格系统可以嵌套 row可以嵌套在col里面     -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col-md-3">abc</div>
+                <div class="col-md-3">abc</div>
+                <div class="col-md-3">abc</div>
+                <div class="col-md-3">abc</div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-4">ccc</div>
+                        <div class="col-md-4">ccc</div>
+                        <div class="col-md-4">ccc</div>
+                    </div>
+                </div>
+                <div class="col-lg-6"></div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col-lg-2"><a href="#">ab</a></div>
+                <div class="col-lg-2"><a href="#">ab</a></div>
+                <div class="col-lg-2"><a href="#">ab</a></div>
+                <div class="col-lg-2"><a href="#">ab</a></div>
+                <div class="col-lg-2"><a href="#">ab</a></div>
+                <div class="col-lg-2"><a href="#">ab</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  通过使用col-*-push-*和col-*-pull-*可以改变列的顺序   -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 col-md-push-3">col-md-3</div>
+        <div class="col-md-3 col-md-pull-9">col-md-9</div>
+    </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

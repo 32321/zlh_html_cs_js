@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .ab{
+           width: 300px;
+            height: 300px;
+            background-color: #bb880e;
+        }
+        .a{
+            width: 150px;
+            height: 150px;
+            background-color: #40aa53;
+        }
+        .b{
+            width: 100px;
+            height: 100px;
+            background-color: #00aaee;
+        }
+    </style>
+</head>
+<body>
+<div class="ab">
+    ab
+    <div class="a">
+        b
+        <div class="b">a</div>
+    </div>
+</div>
+<script>
+    var oDiv_a=document.getElementsByClassName("a")[0];
+    var oDiv_b=document.getElementsByClassName("b")[0];
+    var oDiv_ab=document.getElementsByClassName("ab")[0];
+//true表示元素在由外向内响应事件     false表示元素在由内向外响应时间
+    oDiv_a.addEventListener("click",function () {
+        console.log("a");
+    });
+    oDiv_b.addEventListener("click",function () {
+        console.log("b");
+    },true);
+    oDiv_ab.addEventListener("click",function () {
+        console.log("ab");
+    });
+</script>
+</body>
+</html>

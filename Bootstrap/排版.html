@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>排版</title>
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<!-- 排版  为h1到h6设置了样式，还设置了类h1到h6,让其他的标签显示一样的样式
+     Bootstrap还为标签small设置了样式，也为类small设置一样的属性
+     使用标签small或类small可以有一样的样式，都可以作为副标题。
+  -->
+<h1>我正在学习Bootstrap</h1>
+<h2>我正在学习Bootstrap</h2>
+<h3>我正在学习Bootstrap<small>Bootstrap</small></h3>
+<h4>我正在学习Bootstrap  <span class="small">Bootstap</span></h4>
+<h5>我正在学习Bootstrap</h5>
+<h6>我正在学习Bootstrap</h6>
+<span class="h1">我是一个</span>
+<p class="h3">我是一个</p>
+<div class="h2">我是一个</div>
+<!--  Bootatrap为全局设置了的 font-size为14px  line-height为1.428  这些属性被赋予body和段落元素
+      p元素还被设置了等于二分之一行高(10px)的底部外边距。
+      类lead可以使段落突出显示
+    -->
+    <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+        Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+    <p class="lead">Nullam quis risus eget urna mollis ornare vel eu leo. Cum s</p>
+
+    <!--
+    对需要高亮显示的部分用标签mark
+    对被删除的文本使用标签del
+    对没用的文本使用标签s  (和上面的效果一样)
+    对额外插入的文本使用标签ins
+    对文本画下划线的使用标签u
+    对不需要强调inline和block的文本，使用标签small    文本被设置为父容器字体大小的85%
+    标签元素中嵌套的small标签被设置为不同的字体大小     可以为行内标签赋予small类以代替small元素。
+    -->
+<p class="lead">
+    us et magnis dis parturient montes, nascetur ridiculus
+    <mark>us et magnis dis partu   mark        rient montes, nascetur ridiculus</mark>
+    s risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+    Cum sociis natoque penatibus et magnis dis parturient montes, n
+</p>
+<del>s risus eget urna mollis orn     del      are vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+    Cum sociis natoque penatibus et magnis dis parturient montes, n     del</del><br>
+<s>eget urna mollis orn    s     are vel eu leo. Cum socii     s</s><br>
+<ins>enatibus et magn   ins    is dis partu    ins</ins><br>
+<u>sociis natoque        u           penatibus et magnis    u</u><br>
+<p>fhgydw <span class="small">dwfjkehkfuweildhfkre</span>    gycgwycgw<small>dhgdywegdwdt</small></p>
+<!-- 通过增加font-weight值来强调文本  strong
+     用斜体来强调文本   em
+   -->
+<p>bootstrap/js/bootstrap<strong>atoque penatibus et magnis dis parturient</strong></p>
+<p>ipt src="js/jquery-3.3.1.min.js<em>clude all compiled plugins (below)</em></p>
+
+<!--    在h5中，可以放心使用b标签和i标签 b标签用于高亮单词或词语，不带有着重的意味  i标签用于发言和技术词汇    -->
+
+    <!--   通过文本对齐类，可将文本重新对齐
+           text-left:文本向左对齐   text-center:文本居中对齐    text-right:文本向右对齐
+           text-nowrap:没换行的文本，就是无论p里面的文本有多少，都会在一行中呈现，不会换行。
+           text-justify:对齐的文本   当文本的长度超过屏幕长度时，会换行，文本会上下对齐
+         -->
+    <p class="text-left">HHHHHHHHH</p>
+    <p class="text-center">BBBBBBBBB</p>
+    <p class="text-right">我正在学习！</p>
+    <p class="text-nowrap">Bootstrap是一个框架我证字啊学习我正在学习我咋哼在学校胡的方法和恶恶个反馈计划的文化的客家文化的口味回复可见vh的hi的 降低哦我iwof； 丢丢欸x而反饥饿反野也容易row i譬如皮肤腹黑划入额u服务厚度个积分vDVD vfregreg热狗个人热尔奉化人投入比率和认同感函数苟富贵i西南民族</p>
+    <p class="text-justify">架我证字啊学习我正在学习我咋哼在学校胡的方法和恶恶个反复可见vh的hi的 降低哦我iwof； 丢丢欸x而反饥饿反野也容易row i譬如皮 vfregreg热狗个人热尔奉化人投入比率和认同感函数苟富贵i西南民族的口味回复可见vh的hi的 降低哦我iwof； 丢丢欸x而</p>
+    <!--    text-lowercase:文本全部变成小写的
+            text-uppercase:文本全部变成大写的
+            text-capitalize:文本内的每个单词的首字母都变成大写的
+            abbr：缩写标签  需要有title属性  当鼠标放在abbr的文本时，
+            会显示属性title的内容  bootstrap重写了attr标签，
+            效果具体为文本会有虚的边框，鼠标悬停文本上面时，会出现一个问号，然后展现title的值
+            给abbr添加initialism类，会使font-size的值小一点。
+            使用标签address来存放地址(块级)
+            引用标签blockquote标签引用形式   直接引用时，嵌套p标签
+            多种引用形式添加footer标签表明引用来源，来源的名称可以包括在cite标签中
+            通过给blockquote添加blockquote-reverse类使引用内容呈现右对齐。
+        -->
+    <p class="text-lowercase">ABCDEF</p>
+    <p class="text-uppercase">abcde</p>
+    <p class="text-capitalize">abcde   xyz   hhh</p>
+    <abbr class="initialism" title="I like study">I l s</abbr>
+    <blockquote><p>natoque penatibus</p></blockquote>
+    <blockquote>
+        <p>zhulihaozhulihao</p>
+        <footer>zheshiwozheshiwo<cite>tengxun</cite></footer>
+    </blockquote>
+    <blockquote class="blockquote-reverse">
+        <p>zhezhezheshishishiwowowo</p>
+        <footer>hahaahahaha<cite>thisthis</cite></footer>
+    </blockquote>
+<!--  列表  排列顺序无关重要的用ul  排列顺序至关重要的用ol  移除列表的list-style使用list-unstyled类
+      使用内联列表时，使用list-inline类，将所有元素放置在同一行中。
+   -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
