@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+</head>
+<body>
+<script>
+    //把js对象序列化为json格式的字符串
+    var person={
+        name:"xiaoming",
+        age:18,
+        height:'188cm',
+        weight:"60kg",
+        skills:['sing','coding','cooking'],
+        have:{
+            money:35,
+            pnone:'apple'
+        }
+    }
+    console.log(person);
+    var person_json=JSON.stringify(person);
+    console.log(person_json);
+    //要输出好看一些，可以加上参数，按缩进输出
+    var person_json_2=JSON.stringify(person,null,' ');
+    console.log(person_json_2);
+    //第二个参数用于控制如何筛选对象的键值，如果我们指向输出指定的属性，可以传入Array.
+    var person_json_3=JSON.stringify(person,['name','skills'],' ');//不能得到对象中的对象
+    console.log(person_json_3);
+    //还可以传入一个函数，这样对象的每个键值对都会被函数先处理
+    function convert(key,value) {
+        if(typeof value=="string"){
+            return value.toUpperCase();
+        }
+        return value;
+    }
+    var person_json_4=JSON.stringify(person,convert,' ');//value是string类型的都会变成大写的。
+    console.log(person_json_4);
+    //如果要精确控制如何序列化js对象，可以给js对象定义一个toJSON()的方法，直接返回JSON应该序列化的数据。
+    var person_2={
+        name:"xiaomi",
+        age:7,
+        width:'12cm',
+        height:'3cm',
+        toJSON:function () {
+            return {
+                'Name':this.name,
+                'Age':this.age
+            }
+        }
+    }
+    console.log(JSON.stringify(person_2));
+    //拿到一个JSON格式的字符串，我们可以直接使用JSON.parse()把它变成一个js对象
+    console.log(JSON.parse('[2,5,true,"are you ok"]'));
+    console.log(JSON.parse('56.45'));
+    console.log(JSON.parse('"hahahaha"'));
+    console.log(JSON.parse('{"name":"xiaohau","age":19}'));
+</script>
+</body>
+</html>
