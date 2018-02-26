@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上浮</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: #40aa53;
+            position: relative;
+            top: 30px;
+            left: 100px;
+        }
+        li{
+           float: left;
+           margin-left: 20px;
+           color:#bb880e;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <p>我在学上浮的块</p>
+    <ul>
+        <li>AAA</li>
+        <li>BBB</li>
+        <li>CCC</li>
+    </ul>
+</div>
+<script>
+        var oDiv=document.getElementsByTagName("div")[0];
+//        oDiv.onmouseover=function () {
+//            this.style.top=this.offsetTop-20+"px";
+//        };
+//        oDiv.onmouseout=function () {
+//            this.style.top=this.offsetTop+20+"px";
+//        };//一下变成这样
+        var st,st1;
+        oDiv.onmouseover=function () {
+            clearInterval(st1);
+            st=setInterval(function () {
+                if(oDiv.offsetTop===0){
+                    clearInterval(st);
+                }else {
+                    oDiv.style.top=oDiv.offsetTop-10+"px";
+                }
+            },200);
+        };
+        oDiv.onmouseout=function () {
+            clearInterval(st);
+            st1=setInterval(function () {
+                if(oDiv.offsetTop===30){
+                    clearInterval(st1);
+                }else {
+                    oDiv.style.top=oDiv.offsetTop+10+"px";
+                }
+            },200);
+        };
+
+
+</script>
+</body>
+</html>
