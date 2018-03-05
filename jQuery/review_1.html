@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复习1</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        * li{
+            list-style-type: none;
+        }
+        .box{
+            background-color: #eee631;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            border: 15px solid #2c8021;
+            margin: 5px;
+        }
+        .box3{
+            position: absolute;
+            left: 50px;
+            top: 500px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<div class="box" title="test prop&&attr" data-name="zhulihao">
+    <ul>
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+        <li>005</li>
+    </ul>
+</div>
+<p><input type="text" placeholder="hahaha"></p>
+<span>fuigeybwehrrecngrucgnsrbuggej</span>
+<div class="box2">ABCD</div>
+<div class="box3">
+    <div>0ABCD</div>
+</div>
+    <script>
+        var a=$("div:eq(0)").hasClass("box");//判断所匹配的元素是否有指定的类名
+        console.log(a);
+        var b=$("div:first-child").attr("title");
+        var c=$("div:eq(0)").prop("title");//说明title是元素的内置属性  适用于大多数html元素的属性有class id style title
+        console.log(b+"~"+c);//test prop&&attr~test prop&&attr    也可以给html元素自定义属性
+        var d=$("div:eq(0)").attr("data-name");
+        var e=$("div:even").prop("data-name");
+        console.log(d+"~"+e);//zhulihao~undefined  说明自定义的属性只能通过attr来获取，prop获得是undefined
+        $("div:eq(0)").attr("id","zzzz");   //发现remove-Prop不能起作用
+        $("div:eq(0)").removeProp("data-name");//一般删除属性时用removeAttr方法，一般要删除的都是自定义的属性
+        var f=$("p > input").val("zhzhzhzhz发的语句和你讨好你好干部提拔国防部");//此方法设置表单内容时返回的当前元素，不是表单内容，这个方法主要就是获得
+        //表单内容或设置表单内容
+        var g=$("p > input").val();//直接返回表单内容。
+        var h=$("p > input").html();//不能获取 返回null
+        console.log(g+"-"+h);
+        var i=$("span").html();
+        console.log(i)//fuigeybwehrrecngrucgnsrbuggej    获得了元素的内容
+        console.log($(".box2").width()+"..."+$(".box2").height());//100...100 width
+        console.log($(".box2").innerWidth()+"..."+$(".box2").innerHeight());//140...140 width+padding
+        console.log($(".box2").outerHeight()+"..."+$(".box2").outerHeight());//170...170 width+padding+border
+        console.log($(".box2").offset());//相对于文档
+        console.log($(".box2").position());//相对与最先定位过的祖先元素
+        console.log($(".box3 div").position());
+
+    </script>
+</body>
+</html>
